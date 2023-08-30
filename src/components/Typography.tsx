@@ -1,42 +1,58 @@
-// // Typography.tsx
-// import React, { HTMLProps } from "react";
+import { style } from '../constants/style';
 
-// interface TypographyProps
-//   extends HTMLProps<
-//     HTMLHeadingElement | HTMLParagraphElement | HTMLSpanElement
-//   > {
-//   variant: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "span";
-// }
+const Title = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <h1 className="before relative mb-8 bg-gradient-to-br from-cyan-900 to-cyan-600 bg-clip-text pb-8  text-5xl font-bold text-transparent before:absolute before:bottom-0 before:h-2 before:w-20 text-center sm:text-start before:rounded-full before:bg-cyan-600 dark:from-cyan-600 dark:to-cyan-300 md:text-8xl before:left-1/2 before:-translate-x-1/2 sm:before:left-0 sm:before:translate-x-0">
+      {children}
+    </h1>
+  );
+};
 
-// const Typography: React.FC<TypographyProps> = ({
-//   variant,
-//   className,
-//   children,
-//   ...rest
-// }) => {
-//   const classes = `text-${variant} ${className || ""}`;
+const PrimaryHeading = ({ children }: { children: React.ReactNode }) => {
+  return <h2 className={`${style.textPrimary} text-3xl mb-8`}>{children}</h2>;
+};
 
-//   if (variant.startsWith("h")) {
-//     return React.createElement(
-//       variant,
-//       { className: classes, ...rest },
-//       children,
-//     );
-//   } else if (variant === "p") {
-//     return (
-//       <p className={classes} {...rest}>
-//         {children}
-//       </p>
-//     );
-//   } else if (variant === "span") {
-//     return (
-//       <span className={classes} {...rest}>
-//         {children}
-//       </span>
-//     );
-//   }
+const SecondaryHeading = ({ children }: { children: React.ReactNode }) => {
+  return <h3 className={`${style.textPrimary} text-3xl mb-8`}>{children}</h3>;
+};
 
-//   return null;
-// };
+const Paragraph = ({ children }: { children: React.ReactNode }) => {
+  return <p className={`${style.textSecondary} mb-8`}>{children}</p>;
+};
 
-// export default Typography;
+const SectionHeading = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <span
+      className={`${style.textSecondary} mb-4 text-xs font-bold uppercase tracking-widest`}
+    >
+      {children}
+    </span>
+  );
+};
+
+type TypographyVariant = 'h1' | 'h2' | 'h3' | 'p' | 'span';
+
+const Typography = ({
+  variant,
+  children,
+}: {
+  variant?: TypographyVariant;
+  children: React.ReactNode;
+}) => {
+  switch (variant) {
+    case 'h1':
+      return <Title>{children}</Title>;
+    case 'h2':
+      return <PrimaryHeading>{children}</PrimaryHeading>;
+    case 'h3':
+      return <SecondaryHeading>{children}</SecondaryHeading>;
+    case 'p':
+      return <Paragraph>{children}</Paragraph>;
+    case 'span':
+      return <SectionHeading>{children}</SectionHeading>;
+    default:
+      return <Paragraph>{children}</Paragraph>;
+  }
+};
+
+export default Typography;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-type Theme = 'dark' | 'light';
+type Theme = string;
 
 interface UseThemeReturn {
   theme: Theme;
@@ -8,11 +8,14 @@ interface UseThemeReturn {
 }
 
 function useTheme(): UseThemeReturn {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const prefersDarkMode = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-    return prefersDarkMode ? 'dark' : 'light';
+  const preferedTheme: boolean = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+
+  const [theme, setTheme] = useState<Theme>((): Theme => {
+    const initialTheme: Theme = preferedTheme ? 'dark' : 'light';
+    const storedTheme: string | null = localStorage.getItem('theme');
+    return storedTheme ? storedTheme : initialTheme;
   });
 
   useEffect(() => {
@@ -26,8 +29,8 @@ function useTheme(): UseThemeReturn {
   }, [theme]);
 
   const switchTheme = (): void => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+    localStorage.setItem('theme', theme);
   };
 
   return { theme, switchTheme };

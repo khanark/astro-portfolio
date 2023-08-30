@@ -1,8 +1,11 @@
+// !FIX: Delete this component and use the astro component instead
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import layout, { style } from '../constants/style';
 import { pageContent } from '../constants/constants';
 import type { SocialLink } from '../constants/constants';
 import ProgrammingAnimation from '../assets/programming-animate.svg';
+import Typography from './Typography';
 
 const Hero = (): JSX.Element => {
   return (
@@ -10,11 +13,9 @@ const Hero = (): JSX.Element => {
       className={`${layout.maxWidth} relative flex flex-col justify-between gap-12 py-12  sm:flex-row md:pb-28 md:pt-16`}
     >
       <div className="flex flex-col items-center justify-between sm:items-start">
-        <h1
-          className={`before relative mb-8 bg-gradient-to-br from-cyan-900 to-cyan-600 bg-clip-text pb-8  text-5xl font-bold text-transparent before:absolute before:bottom-0 before:h-2 before:w-20 text-center sm:text-start before:rounded-full before:bg-cyan-600 dark:from-cyan-600 dark:to-cyan-300 md:text-8xl before:left-1/2 before:-translate-x-1/2 sm:before:left-0 sm:before:translate-x-0`}
-        >
+        <Typography variant="h1">
           Borislav <br /> Godumov.
-        </h1>
+        </Typography>
         <div className="flex gap-4">
           {pageContent.socialLinks.map((link: SocialLink, index: number) => (
             <a href={link.link} target="_blank">
@@ -46,23 +47,19 @@ const Hero = (): JSX.Element => {
             filter: 'blur(20px)',
           }}
         />
-        <p
-          className={`${style.textSecondary} mb-4 text-xs font-bold uppercase tracking-widest`}
-        >
-          - Introduction
-        </p>
-        <div className="flex flex-1 flex-col items-center justify-between gap-8 sm:items-start">
-          <h3 className={`${style.textPrimary} text-3xl `}>
+        <Typography variant="span">- Introduction</Typography>
+        <div className="flex flex-1 flex-col items-center justify-between sm:items-start">
+          <Typography variant="h2">
             Software Developer based in Sofia, Bulgaria.
-          </h3>
-          <p className={`${style.textSecondary}`}>
+          </Typography>
+          <Typography>
             Driven by the ever-evolving nature of technology, I embrace the
             challenge of staying current with the latest trends and techniques.
-          </p>
+          </Typography>
           <a
             href="path/to/your/file.ext"
             download="filename.ext"
-            className="inline-flex w-max items-center gap-3 rounded-md bg-gradient-to-br from-cyan-600 to-cyan-900 px-6 py-3 text-white shadow-2xl shadow-cyan-800 transition-transform duration-300 hover:scale-105"
+            className="inline-flex mt-4 w-max items-center gap-3 rounded-md bg-gradient-to-br from-cyan-600 to-cyan-900 px-6 py-3 text-white shadow-2xl shadow-cyan-800 transition-transform duration-300 hover:scale-105"
           >
             <FontAwesomeIcon icon={pageContent.utilityIcons.download} />
             <span>Take a look at my CV</span>

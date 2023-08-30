@@ -13,7 +13,6 @@ const Navigation = (): JSX.Element => {
   const { theme } = useTheme();
 
   const toggleDropDownMenu = () => {
-    console.log('Button is clicked');
     setDropDownMenu((prev) => !prev);
   };
 
@@ -28,10 +27,9 @@ const Navigation = (): JSX.Element => {
         </span>
       </h3>
       {/* Desktop devices */}
-      <div className="hidden items-center gap-8 lg:flex ">
+      <div className="hidden items-center gap-8 lg:flex">
         <div className="flex items-center gap-2">
           <span className={`${style.textSecondary} text-sm`}>
-            {/* This thing is not working, make sure you handle it. */}
             {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
           </span>
           <ThemeSwitchButton />
