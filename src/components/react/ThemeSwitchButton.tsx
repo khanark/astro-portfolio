@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { style } from '../constants/style';
-import { pageContent } from '../constants/constants';
-import useTheme from '../hooks/UseTheme';
+import { style } from '../../constants/style';
+import { pageContent } from '../../constants/constants';
 
-const ThemeSwitchButton = (): JSX.Element => {
-  const { theme, switchTheme } = useTheme();
-
+const ThemeSwitchButton = ({
+  theme,
+  switchTheme,
+}: {
+  theme: string;
+  switchTheme: any;
+}) => {
   return (
     <button
       onClick={switchTheme}

@@ -16,6 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import type { Dispatch } from 'react';
 
 interface IconMap {
   [key: string]: IconDefinition;
@@ -30,6 +31,7 @@ export type NavLink = {
   id: string;
   text: string;
   icon: IconDefinition;
+  toggleDropDownMenu?: () => void;
 };
 
 interface PageContent {
@@ -56,7 +58,7 @@ export const pageContent: PageContent = {
   navLinks: [
     { icon: faLaptopCode, id: 'works', text: 'Works' },
     { icon: faGraduationCap, id: 'experience', text: 'Experience' },
-    { icon: faPaperPlane, id: 'contactMe', text: 'Contact Me' },
+    { icon: faPaperPlane, id: 'contact', text: 'Contact Me' },
   ],
   utilityIcons: {
     download: faDownload,

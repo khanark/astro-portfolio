@@ -4,6 +4,10 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        FiraCode: ['Fira Code', 'monospace'],
+        Poppins: ['Poppins', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },

@@ -1,13 +1,13 @@
 // !FIX: Delete this component and use the astro component instead
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import layout, { style } from '../constants/style';
-import { pageContent } from '../constants/constants';
-import type { SocialLink } from '../constants/constants';
+import layout, { style } from '../../constants/style';
+import { pageContent } from '../../constants/constants';
+import type { SocialLink } from '../../constants/constants';
 import ProgrammingAnimation from '../assets/programming-animate.svg';
 import Typography from './Typography';
 
-const Hero = (): JSX.Element => {
+const Hero = () => {
   return (
     <div
       className={`${layout.maxWidth} relative flex flex-col justify-between gap-12 py-12  sm:flex-row md:pb-28 md:pt-16`}

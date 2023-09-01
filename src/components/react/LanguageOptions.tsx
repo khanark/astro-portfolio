@@ -1,4 +1,4 @@
-import { style } from "../constants/style";
+import { style } from '../../constants/style';
 
 type Props = {
   borderless?: boolean;
@@ -6,9 +6,9 @@ type Props = {
 
 const LanguageOptions = ({ borderless }: Props) => {
   const languages = [
-    { code: "en", name: "English" },
-    { code: "es", name: "Español" },
-    { code: "bg", name: "Български" },
+    { code: 'en', name: 'English' },
+    { code: 'es', name: 'Español' },
+    { code: 'bg', name: 'Български' },
     // Add more languages as needed
   ];
 
@@ -21,7 +21,7 @@ const LanguageOptions = ({ borderless }: Props) => {
   return (
     <select
       className={`${style.textSecondary} ${
-        !borderless ? "rounded-md border border-gray-300" : ""
+        !borderless ? 'rounded-md border border-gray-300' : ''
       } cursor-pointer bg-transparent px-2 py-1 outline-none`}
       onChange={handleChangeLanguage}
     >

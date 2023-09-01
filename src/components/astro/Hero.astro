@@ -1,14 +1,13 @@
 ---
-import { pageContent } from '../constants/constants';
-import ProgrammingAnimation from '../assets/programming-animate.svg';
-import Typography from './Typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import layout, { style } from '../constants/style';
-import Gradient from './Gradient.astro';
+import { pageContent } from '../../constants/constants';
+import layout, { style } from '../../constants/style';
+import Typography from '../react/Typography';
+import ProgrammingAnimation from '../../assets/programming-animate.svg';
 ---
 
 <section
-  class=`${layout.maxWidth} relative flex flex-col justify-between gap-12 py-12 sm:flex-row md:pb-28 md:pt-16`
+  class=`${layout.maxWidth} relative flex flex-col justify-between gap-12 py-28 sm:flex-row md:pb-28 md:pt-16`
 >
   <div class="flex flex-col items-center justify-between sm:items-start">
     <Typography variant="h1">
@@ -38,14 +37,23 @@ import Gradient from './Gradient.astro';
     class=`${style.textSecondary} absolute bottom-0 left-0 hidden items-center gap-1 p-2 text-xs transition-all duration-300 hover:gap-2 md:flex`
   >
     <span>Web illustrations by Storyset</span>
-    <FontAwesomeIcon icon={pageContent.arrowRight} />
+    <FontAwesomeIcon icon={pageContent.arrowRight} client:load />
   </a>
   <div class="relative z-[1] flex w-full flex-col sm:max-w-[350px]">
-    <Gradient gradientColor="#155e75" gradientSize="350px" />
-    <Typography variant="span">- Introduction</Typography>
+    <Typography variant="span">- Introduction(text);</Typography>
+    <div class="absolute top-8 w-1/2 h-px bg-cyan-600"></div>
+    <div class="absolute top-8 w-px h-1/2 bg-cyan-600"></div>
     <div
-      class="flex flex-1 flex-col items-center justify-between sm:items-start"
+      class="flex pl-4 pt-4 flex-1 flex-col items-center justify-between sm:items-start"
     >
+      <div
+        class=`absolute -left-1/2 -top-[90px] -z-[1] h-[400px] w-[400px] rounded-full opacity-60`
+        style={{
+          background: `radial-gradient(circle, #155e75, transparent)`,
+          filter: 'blur(40px)',
+        }}
+      >
+      </div>
       <Typography variant="h2">
         Software Developer based in Sofia, Bulgaria.
       </Typography>
@@ -53,14 +61,14 @@ import Gradient from './Gradient.astro';
         Driven by the ever-evolving nature of technology, I embrace the
         challenge of staying current with the latest trends and techniques.
       </Typography>
-      <a
-        href="path/to/your/file.ext"
-        download="filename.ext"
-        class="inline-flex mt-4 w-max items-center gap-3 rounded-md bg-gradient-to-br from-cyan-600 to-cyan-900 px-6 py-3 text-white shadow-2xl shadow-cyan-800 transition-transform duration-300 hover:scale-105"
-      >
-        <FontAwesomeIcon icon={pageContent.utilityIcons.download} />
-        <span>Take a look at my CV</span>
-      </a>
     </div>
+    <a
+      href="path/to/your/file.ext"
+      download="filename.ext"
+      class="mx-auto sm:mx-0 inline-flex mt-4 w-max items-center gap-3 rounded-md bg-gradient-to-br from-cyan-600 to-cyan-900 px-6 py-3 text-white shadow-2xl shadow-cyan-800 transition-transform duration-300 hover:scale-105"
+    >
+      <FontAwesomeIcon icon={pageContent.utilityIcons.download} client:only />
+      <span>Take a look at my CV</span>
+    </a>
   </div>
 </section>
