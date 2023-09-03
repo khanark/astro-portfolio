@@ -8,8 +8,18 @@ const Title = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const PrimaryHeading = ({ children }: { children: React.ReactNode }) => {
-  return <h2 className={`${style.textPrimary} text-3xl mb-8`}>{children}</h2>;
+const PrimaryHeading = ({
+  children,
+  classes,
+}: {
+  classes?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <h2 className={`${style.textPrimary} text-3xl mb-8 ${classes}`}>
+      {children}
+    </h2>
+  );
 };
 
 const SecondaryHeading = ({ children }: { children: React.ReactNode }) => {

@@ -1,10 +1,11 @@
 ---
-// import Hero from '../components/Hero';
 import Hero from '../components/astro/Hero.astro';
 import Navigation from '../components/react/Navigation';
 import Layout from '../layouts/Layout.astro';
 import Contact from '../components/astro/Contact.astro';
 import layout from '../constants/style';
+import Technologies from '../components/astro/Technologies.astro';
+import Projects from '../components/astro/Projects.astro';
 ---
 
 <Layout title="Lavacoder | Home">
@@ -14,5 +15,7 @@ import layout from '../constants/style';
     <Navigation client:load />
     <Hero />
   </div>
+
   <Contact />
+  <Projects />
 </Layout>

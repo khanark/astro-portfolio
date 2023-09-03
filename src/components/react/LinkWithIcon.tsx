@@ -12,10 +12,10 @@ const LinkWithIcon = ({ icon, id, text, toggleDropDownMenu }: NavLink) => {
   const onLinkClick = () => {
     scrollToSection(id);
     if (toggleDropDownMenu) {
-      console.log('toggleDropDownMenu');
       toggleDropDownMenu();
     }
   };
+
   return (
     <li>
       <a
@@ -29,4 +29,5 @@ const LinkWithIcon = ({ icon, id, text, toggleDropDownMenu }: NavLink) => {
     </li>
   );
 };
+
 export default LinkWithIcon;
