@@ -8,65 +8,76 @@ import Technologies from './Technologies.astro';
 ---
 
 <section class=`${layout.section.light} pb-0`>
-  <div
-    id="contact"
-    class=`${layout.maxWidth} flex flex-col sm:flex-row justify-between gap-14`
-  >
-    <div class="relative w-full sm:max-w-md">
-      <Typography variant="span">- Contact(me);</Typography>
-      <Indentation />
-      <div class="pt-4 pl-4">
-        <Typography variant="h2">
-          Embark on a Journey of Connection and Collaboration.
-        </Typography>
-        <Typography>
-          Feel free to reach out to me for any inquiries or collaboration
-          opportunities. I'm always eager to connect and engage with like-minded
-          individuals.
-        </Typography>
-      </div>
-      <a
-        href="mailto:borislav.godumov@outlook.com"
-        class=`inline-block justify-center sm:justify-start font-FiraCode text-2xl font-medium mt-4 text-cyan-600 underline underline-offset-4 flex gap-2 items-center hover:text-cyan-600 transition duration-300`
-      >
-        <span class="">Send me an email</span>
-        <FontAwesomeIcon icon={pageContent.arrowRight} />
-      </a>
-    </div>
-    <div class="w-full sm:max-w-lg flex flex-col justify-between">
-      <div>
-        <Typography variant="h2">
-          Programming is the art of turning logic into tangible creations.
-        </Typography>
-        <Typography>
-          In a world driven by technology, programming enables us to shape the
-          future through lines of code. It's a creative and logical endeavor
-          that empowers us to transform ideas into reality.Whether it's crafting
-          software or building applications, programming is the bridge between
-          imagination and innovation
-        </Typography>
-      </div>
-      <div>
-        <div class="flex justify-center sm:justify-start items-center gap-12">
-          <Typography
-            variant="p"
-            className="flex !p-0 items-center flex-col text-xl sm:text-2xl"
-          >
-            <span class="text-cyan-600 text-3xl sm:text-4xl font-bold"
-              >100 +</span
-            > projects
-          </Typography>
-          <Typography
-            variant="p"
-            className="flex !p-0 items-center text-xl sm:text-2xl flex-col"
-          >
-            <span class="text-cyan-600 text-3xl sm:text-4xl font-bold"
-              >Hundreds</span
-            >of solved issues
-          </Typography>
+    <div
+        id="contact"
+        class=`${layout.maxWidth} flex flex-col sm:flex-row justify-between gap-14`
+    >
+        <div class="relative flex flex-col justify-between w-full sm:max-w-md">
+            <div>
+                <Typography variant="span">- Contact(me);</Typography>
+                <Indentation />
+                <div class="pt-4 pl-4">
+                    <Typography variant="h2">
+                        Embark on a Journey of Connection and Collaboration.
+                    </Typography>
+                    <Typography>
+                        Feel free to reach out to me for any inquiries or
+                        collaboration opportunities. I'm always eager to connect
+                        and engage with like-minded individuals.
+                    </Typography>
+                </div>
+            </div>
+            <a
+                href="mailto:borislav.godumov@outlook.com"
+                class=`group w-max border-2 border-cyan-600 text-cyan-600 text-xl rounded-lg px-8 py-4 flex gap-4 hover:gap-16 items-center hover:bg-cyan-600 hover:text-white transition-all  ease-in-out`
+            >
+                <span>Send me an email</span>
+                <FontAwesomeIcon
+                    icon={pageContent.arrowRight}
+                    className="rotate-2"
+                />
+            </a>
         </div>
-      </div>
+        <div class="w-full sm:max-w-lg flex flex-col justify-between">
+            <div>
+                <Typography variant="h2">
+                    Programming is the art of turning logic into tangible
+                    creations.
+                </Typography>
+                <Typography variant="p" className="sm:!max-w-md">
+                    In a world driven by technology, programming enables us to
+                    shape the future through lines of code. It's a creative and
+                    logical endeavor that empowers us to transform ideas into
+                    reality.Whether it's crafting software or building
+                    applications, programming is the bridge between imagination
+                    and innovation
+                </Typography>
+            </div>
+            <div>
+                <div
+                    class="flex flex-wrap justify-center sm:justify-start items-center gap-12"
+                >
+                    <Typography
+                        variant="p"
+                        className="flex items-center flex-col text-xl sm:text-2xl !mb-0"
+                    >
+                        <span
+                            class="text-cyan-600 text-3xl sm:text-4xl font-bold"
+                            >100 +</span
+                        > projects
+                    </Typography>
+                    <Typography
+                        variant="p"
+                        className="flex items-center text-xl sm:text-2xl flex-col !mb-0"
+                    >
+                        <span
+                            class="text-cyan-600 text-3xl sm:text-4xl font-bold"
+                            >Hundreds</span
+                        >of solved issues
+                    </Typography>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <Technologies />
+    <Technologies />
 </section>
