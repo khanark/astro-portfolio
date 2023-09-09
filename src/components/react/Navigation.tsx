@@ -46,12 +46,24 @@ const Navigation = () => {
     <nav
       className={`${layout.maxWidth} sticky top-0 z-30 flex items-center justify-between px-4 h-16`}
     >
-      <h3 className={`${style.textPrimary} text-2xl font-semibold leading-[2]`}>
-        Lavacoder
-        <span className="ml-1 inline-block animate-bounce text-4xl text-cyan-500">
-          .
-        </span>
-      </h3>
+      <div className="flex items-center gap-4">
+        <a href="/" className="">
+          <h3
+            className={`${style.textPrimary} text-2xl font-semibold leading-[2]`}
+          >
+            Lavacoder
+            <span className="ml-1 inline-block animate-bounce text-4xl text-cyan-500">
+              .
+            </span>
+          </h3>
+        </a>
+        <a
+          href="/blog"
+          className="text-cyan-900 dark:text-cyan-600 font-bold font-FiraCode tracking-wider text-sm hover:underline underline-offset-4"
+        >
+          Blog
+        </a>
+      </div>
       {/* Desktop devices */}
       <div className="hidden items-center gap-8 lg:flex">
         <div className="flex items-center gap-2">
