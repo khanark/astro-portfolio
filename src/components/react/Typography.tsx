@@ -39,7 +39,7 @@ const Paragraph = ({
 const SectionHeading = ({ children }: { children: React.ReactNode }) => {
   return (
     <span
-      className={`${style.textSecondary} font-FiraCode block mb-4 text-sm font-bold tracking-widest`}
+      className={`${style.textSecondary} font-FiraCode block mb-4 text-base font-bold tracking-widest`}
     >
       {children}
     </span>

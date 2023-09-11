@@ -1,20 +1,14 @@
 ---
 import Hero from '../components/astro/Hero.astro';
-import Navigation from '../components/react/Navigation';
 import Layout from '../layouts/Layout.astro';
 import Contact from '../components/astro/Contact.astro';
-import layout from '../constants/style';
-import Technologies from '../components/astro/Technologies.astro';
 import Projects from '../components/astro/Projects.astro';
+import BlogDemo from '../components/astro/BlogDemo.astro';
 ---
 
 <Layout title="Lavacoder | Home">
-  <div
-    class=`${layout.section.dark} !p-0 overflow-hidden relative z-10 before:absolute before:w-full before:h-8 before:-bottom-6 before:left-0 before:bg-cyan-800 before:z-10 before:-rotate-1`
-  >
-    <Navigation client:load />
-    <Hero />
-  </div>
+  <Hero />
   <Contact />
   <Projects />
+  <BlogDemo />
 </Layout>

@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { style } from '../../constants/style';
-import { pageContent } from '../../constants/constants';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { style } from "../../constants/style";
+import { pageContent } from "../../constants/constants";
 
 const ThemeSwitchButton = ({
   theme,
@@ -12,15 +12,19 @@ const ThemeSwitchButton = ({
   return (
     <button
       onClick={switchTheme}
-      className={`${style.textSecondary} cursor-pointer text-2xl transition duration-300 hover:scale-125`}
+      className={`${style.textSecondary} flex gap-2 items-center cursor-pointer`}
     >
       <FontAwesomeIcon
+        className="text-lg"
         icon={
-          theme === 'dark'
+          theme === "dark"
             ? pageContent.themeSwitchIcons.light
             : pageContent.themeSwitchIcons.dark
         }
       />
+      <span className={`${style.textSecondary} text-sm`}>
+        {theme === "dark" ? "Dark" : "Light"}
+      </span>
     </button>
   );
 };
