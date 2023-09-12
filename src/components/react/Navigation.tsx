@@ -43,7 +43,10 @@ const Navigation = () => {
   };
 
   return (
-    <div className={`${layout.section.dark} !p-0 z-30 sticky top-0`}>
+    <div
+      id="nav-main"
+      className={`${layout.section.dark} static top-0 !p-0 z-30`}
+    >
       <nav
         className={`${layout.maxWidth} flex items-center justify-between px-4 h-16`}
       >

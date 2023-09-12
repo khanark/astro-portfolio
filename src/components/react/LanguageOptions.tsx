@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { style } from "../../constants/style";
+import { motion, useAnimationFrame } from "framer-motion";
 
 type Props = {
   borderless?: boolean;
@@ -21,28 +22,42 @@ const LanguageOptions = ({ borderless }: Props) => {
     setShowLanguageOptions((prev) => !prev);
   };
 
+  const switchLanguages = (lang: string): void => {
+    setCurrentLanguage(lang);
+    showOptions();
+  };
+
   return (
-    <div className="relative">
+    <div className="relative w-auto">
       <button
         className={`${style.textSecondary} ${
           !borderless ? "rounded-md border border-gray-300" : ""
-        } cursor-pointer bg-transparent px-2 py-1 outline-none`}
+        } cursor-pointer bg-transparent px-2 py-1 outline-none text-sm flex items-center gap-2`}
         onClick={showOptions}
       >
-        {currentLanguage}
+        <i className="fa-solid fa-globe text-lg"></i>
+        <span className="inline-block w-16 text-start">{currentLanguage}</span>
       </button>
       {showLanguageOptions && (
-        <ul
-          className={`${style.textSecondary} absolute top-full p-2 border-2 border-gray-600 rounded-lg`}
+        <motion.ul
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className={`${style.textPrimary} absolute top-full p-2 border-2 border-gray-600 rounded-lg`}
         >
           {languages.map((lang) => {
             return (
-              <button key={lang.code} className="dark:hover:bg-gray-600">
+              <button
+                key={lang.code}
+                className="dark:hover:bg-gray-600 w-full text-start px-2 py-1"
+                onClick={() => switchLanguages(lang.name)}
+              >
                 {lang.name}
               </button>
             );
           })}
-        </ul>
+        </motion.ul>
       )}
     </div>
   );

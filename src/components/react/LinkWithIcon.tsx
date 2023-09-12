@@ -1,18 +1,8 @@
-import type { NavLink } from '../../constants/constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { NavLink } from "../../constants/constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { scrollToSection } from "../../utils/utils";
 
 const LinkWithIcon = ({ icon, id, text, toggleDropDownMenu }: NavLink) => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
-    }
-  };
-
   const onLinkClick = () => {
     scrollToSection(id);
     if (toggleDropDownMenu) {
