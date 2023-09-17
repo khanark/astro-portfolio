@@ -1,63 +1,71 @@
 ---
 import Footer from "../components/astro/Footer.astro";
 import Navigation from "../components/react/Navigation";
+
 interface Props {
-  title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <Navigation client:load />
-    <slot />
-    <Footer />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
-  </body>
+<html lang={lang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+        />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <Navigation client:load lang={lang} />
+        <slot />
+        <Footer />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        />
+    </body>
 
-  <style is:global>
-    @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Poppins:wght@400;500;600;700&display=swap");
+    <style is:global>
+        @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Poppins:wght@400;500;600;700&display=swap");
 
-    body {
-      font-family: "Poppins", sans-serif;
-    }
+        body {
+            font-family: "Poppins", sans-serif;
+        }
 
-    .hover-line::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: #0891b2;
-      transition: width 0.3s ease-in-out;
-    }
+        .hover-line::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #0891b2;
+            transition: width 0.3s ease-in-out;
+        }
 
-    .hover-line:hover::before {
-      width: 100%;
-    }
+        .hover-line:hover::before {
+            width: 100%;
+        }
 
-    .text-wrap {
-      text-wrap: balance;
-    }
+        .text-wrap {
+            text-wrap: balance;
+        }
 
-    .responsive-grid {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-  </style>
+        .responsive-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+    </style>
 </html>

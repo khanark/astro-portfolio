@@ -3,76 +3,118 @@ import Typography from "../react/Typography";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { pageContent } from "../../constants/constants";
 import layout, { style } from "../../constants/style";
+import { Image } from "astro:assets";
+import testimonialImage from "../../assets/Avatar-Shirt_-_Edi_Key_Book_PhotoSession.jpg";
 ---
 
-<section class=`${layout.section.dark}`>
-  <div class=`${layout.maxWidth}`>
-    <Typography variant="span">- Blog</Typography>
-    <div class="flex flex-col md:flex-row justify-between gap-16 md:gap-8">
-      <div class="w-full md:w-auto">
-        <Typography variant="h2">
-          What's new? <br /> My blog and news.
-        </Typography>
-        <a
-          href="/blog"
-          class=`block md:inline-block text-center md:text-start text-cyan-600 underline underline-offset-4`
-          >Read the rest.</a
+<section class=`${layout.section.light}`>
+    <div class=`${layout.maxWidth}`>
+        <Typography variant="span">- Blog</Typography>
+        <div
+            class="flex flex-col md:flex-row justify-between gap-16 md:gap-8 mb-24"
         >
-      </div>
-      <ul class="w-full md:max-w-3xl flex flex-col gap-12">
-        <a
-          class="flex justify-between items-center pb-12 border-b-[1px] border-cyan-900 cursor-pointer"
-        >
-          <div class="w-3/4 flex justify-between flex-wrap gap-2">
-            <span class=`${style.textSecondary}`>Feb 26 / Blog</span>
-            <h3
-              class=`${style.textPrimary} text-2xl w-96 font-semibold line-clamp-2`
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-              at, totam itaque blanditiis quas sint rem quia culpa eius animi
-              fugiat earum, vel quibusdam aliquam amet! Earum magnam nisi quod
-              atque vel laborum facere, debitis, asperiores ex saepe eos
-              voluptates.
-            </h3>
-          </div>
-          <FontAwesomeIcon
-            icon={pageContent.arrowRight}
-            className="text-xl text-cyan-600"
-          />
-        </a>
+            <div class="w-full md:w-auto">
+                <Typography variant="h2">
+                    What's new? <br /> My blog and news.
+                </Typography>
+                <a
+                    href="/blog"
+                    class=`block md:inline-block text-center md:text-start text-cyan-600 underline underline-offset-4`
+                    >Read the rest.</a
+                >
+            </div>
+            <ul class="w-full md:max-w-3xl flex flex-col gap-12">
+                <a
+                    class="flex justify-between items-center pb-12 border-b-[1px] border-cyan-900 cursor-pointer"
+                >
+                    <div class="w-3/4 flex justify-between flex-wrap gap-2">
+                        <span class=`${style.textSecondary}`>Feb 26 / Blog</span
+                        >
+                        <h3
+                            class=`${style.textPrimary} text-2xl w-96 font-semibold line-clamp-2`
+                        >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Doloribus at, totam itaque blanditiis quas
+                            sint rem quia culpa eius animi fugiat earum, vel
+                            quibusdam aliquam amet! Earum magnam nisi quod atque
+                            vel laborum facere, debitis, asperiores ex saepe eos
+                            voluptates.
+                        </h3>
+                    </div>
+                    <FontAwesomeIcon
+                        icon={pageContent.arrowRight}
+                        className="text-xl text-cyan-600"
+                    />
+                </a>
 
-        <a
-          class="flex justify-between items-center pb-12 border-b-[1px] border-cyan-900 cursor-pointer"
-        >
-          <div class="w-3/4 flex justify-between flex-wrap gap-2">
-            <span class=`${style.textSecondary}`>Feb 26 / Blog</span>
-            <h3
-              class=`${style.textPrimary} text-2xl w-96 font-semibold line-clamp-2`
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </h3>
-          </div>
-          <FontAwesomeIcon
-            icon={pageContent.arrowRight}
-            className="text-xl text-cyan-600"
-          />
-        </a>
+                <a
+                    class="flex justify-between items-center pb-12 border-b-[1px] border-cyan-900 cursor-pointer"
+                >
+                    <div class="w-3/4 flex justify-between flex-wrap gap-2">
+                        <span class=`${style.textSecondary}`>Feb 26 / Blog</span
+                        >
+                        <h3
+                            class=`${style.textPrimary} text-2xl w-96 font-semibold line-clamp-2`
+                        >
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                        </h3>
+                    </div>
+                    <FontAwesomeIcon
+                        icon={pageContent.arrowRight}
+                        className="text-xl text-cyan-600"
+                    />
+                </a>
 
-        <a class="flex justify-between items-center pb-12 cursor-pointer">
-          <div class="w-3/4 flex justify-between flex-wrap gap-2">
-            <span class=`${style.textSecondary}`>Feb 26 / Blog</span>
-            <h3
-              class=`${style.textPrimary} text-2xl w-96 font-semibold line-clamp-2`
+                <a
+                    class="flex justify-between items-center pb-12 cursor-pointer"
+                >
+                    <div class="w-3/4 flex justify-between flex-wrap gap-2">
+                        <span class=`${style.textSecondary}`>Feb 26 / Blog</span
+                        >
+                        <h3
+                            class=`${style.textPrimary} text-2xl w-96 font-semibold line-clamp-2`
+                        >
+                            Lorem ipsum dolor sit amet.
+                        </h3>
+                    </div>
+                    <FontAwesomeIcon
+                        icon={pageContent.arrowRight}
+                        className="text-xl text-cyan-600"
+                    />
+                </a>
+            </ul>
+        </div>
+        <div
+            class="flex flex-col md:flex-row gap-16 items-center justify-between"
+        >
+            <div
+                class="md:flex-shrink-0 w-full sm:w-2/4 md:w-1/3 rounded-lg overflow-hidden bg-blend-screen"
             >
-              Lorem ipsum dolor sit amet.
-            </h3>
-          </div>
-          <FontAwesomeIcon
-            icon={pageContent.arrowRight}
-            className="text-xl text-cyan-600"
-          />
-        </a>
-      </ul>
+                <Image
+                    src={testimonialImage}
+                    alt="A bird sitting on a nest of eggs."
+                />
+            </div>
+            <div class="max-w-3xl">
+                <i
+                    class=`${style.textSecondary} text-6xl md:text-8xl fa-solid fa-quote-left mb-2`
+                ></i>
+                <Typography
+                    variant="h2"
+                    className="text-wrap !text-2xl md:!text-3xl !mb-12"
+                >
+                    Borislav is a talented web developer with vast knowledge in
+                    Front-End technologies. I was impressed when I interviewed
+                    him. He will be great fit for any software company.
+                </Typography>
+                <p class=`${style.textSecondary}`>Team Lead</p>
+                <a
+                    class="text-cyan-600 underline underline-offset-4"
+                    href="https://www.linkedin.com/company/adesso-bulgaria/?originalSubdomain=bg"
+                    target="_blank">Adesso Bulgaria</a
+                >
+            </div>
+        </div>
     </div>
-  </div>
 </section>

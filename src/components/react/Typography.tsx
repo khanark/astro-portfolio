@@ -1,4 +1,4 @@
-import { style } from '../../constants/style';
+import { style } from "../../constants/style";
 
 const Title = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -46,7 +46,7 @@ const SectionHeading = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-type TypographyVariant = 'h1' | 'h2' | 'h3' | 'p' | 'span';
+type TypographyVariant = "h1" | "h2" | "h3" | "p" | "span";
 
 const Typography = ({
   variant,
@@ -58,15 +58,15 @@ const Typography = ({
   children: React.ReactNode;
 }) => {
   switch (variant) {
-    case 'h1':
+    case "h1":
       return <Title>{children}</Title>;
-    case 'h2':
+    case "h2":
       return <PrimaryHeading classes={className}>{children}</PrimaryHeading>;
-    case 'h3':
+    case "h3":
       return <SecondaryHeading>{children}</SecondaryHeading>;
-    case 'p':
+    case "p":
       return <Paragraph classes={className}>{children}</Paragraph>;
-    case 'span':
+    case "span":
       return <SectionHeading>{children}</SectionHeading>;
     default:
       return <Paragraph>{children}</Paragraph>;

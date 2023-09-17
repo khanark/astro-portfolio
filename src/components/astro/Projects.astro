@@ -1,12 +1,47 @@
 ---
-import layout, { style } from '../../constants/style';
-import Typography from '../react/Typography';
+import layout, { style } from "../../constants/style";
+import Typography from "../react/Typography";
 ---
 
-<section
-  class=`${layout.section.dark} relative z-10 before:absolute before:w-full before:h-8 before:-top-6 overflow-hidden before:left-0 before:bg-cyan-800 before:z-10 before:-rotate-1`
->
-  <div class=`${layout.maxWidth}`>
-    <Typography variant="span">- Projects</Typography>
-  </div>
+<section id="portfolio" class=`${layout.section.dark}`>
+    <div class=`${layout.maxWidth}`>
+        <div class="justify-center flex flex-wrap gap-4 mb-24">
+            <i
+                class=`${style.textSecondary} devicon-react-original text-6xl md:text-8xl`
+            ></i>
+
+            <i
+                class=`${style.textSecondary} devicon-angularjs-plain text-6xl md:text-8xl`
+            ></i>
+
+            <i
+                class=`${style.textSecondary} devicon-tailwindcss-plain text-6xl md:text-8xl`
+            ></i>
+
+            <i
+                class=`${style.textSecondary} devicon-sass-original text-6xl md:text-8xl`
+            ></i>
+
+            <i
+                class=`${style.textSecondary} devicon-nodejs-plain text-6xl md:text-8xl`
+            ></i>
+
+            <i
+                class=`${style.textSecondary} devicon-mongodb-plain text-6xl md:text-8xl`
+            ></i>
+        </div>
+        <Typography variant="span">- Portfolio</Typography>
+
+        <div class="grid grid-cols-2 gap-16">
+            <div>
+                <Typography variant="h2">
+                    Some of my works. <br /> Selected projects.
+                </Typography>
+                <Typography>
+                    I've build numerous projects, varianting from simple console
+                    applications to to fullstack applications.
+                </Typography>
+            </div>
+        </div>
+    </div>
 </section>

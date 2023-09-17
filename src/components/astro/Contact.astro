@@ -1,76 +1,80 @@
 ---
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { pageContent } from '../../constants/constants';
-import layout from '../../constants/style';
-import Typography from '../react/Typography';
-import Indentation from './Indentation.astro';
-import Technologies from './Technologies.astro';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { pageContent } from "../../constants/constants";
+import layout from "../../constants/style";
+import Typography from "../react/Typography";
+import Indentation from "./Indentation.astro";
 ---
 
-<section class=`${layout.section.light}`>
-  <div
-    id="contact"
-    class=`${layout.maxWidth} flex flex-col sm:flex-row justify-between gap-14`
-  >
-    <div class="relative flex flex-col justify-between w-full sm:max-w-md">
-      <div>
-        <Typography variant="span">- Contact</Typography>
-        <Indentation />
-        <div class="pt-4 pl-4">
-          <Typography variant="h2">
-            Embark on a Journey of Connection and Collaboration.
-          </Typography>
-          <Typography>
-            Feel free to reach out to me for any inquiries or collaboration
-            opportunities. I'm always eager to connect and engage with
-            like-minded individuals.
-          </Typography>
+<section class=`${layout.section.light}` id="contact">
+    <div
+        class=`${layout.maxWidth} flex flex-col sm:flex-row justify-between gap-14`
+    >
+        <div class="relative flex flex-col justify-between w-full sm:max-w-md">
+            <div>
+                <Typography variant="span">- Contact</Typography>
+                <Indentation />
+                <div class="pt-4 pl-4">
+                    <Typography variant="h2">
+                        Embark on a Journey of Connection and Collaboration.
+                    </Typography>
+                    <Typography>
+                        Feel free to reach out to me for any inquiries or
+                        collaboration opportunities. I'm always eager to connect
+                        and engage with like-minded individuals.
+                    </Typography>
+                </div>
+            </div>
+            <a
+                href="mailto:borislav.godumov@outlook.com"
+                class=`group w-max border-2 border-cyan-600 text-cyan-600 text-xl rounded-lg px-8 py-4 flex gap-4 hover:gap-16 items-center hover:bg-cyan-600 hover:text-white transition-all  ease-in-out`
+            >
+                <span>Send me an email</span>
+                <FontAwesomeIcon
+                    icon={pageContent.arrowRight}
+                    className="rotate-2"
+                />
+            </a>
         </div>
-      </div>
-      <a
-        href="mailto:borislav.godumov@outlook.com"
-        class=`group w-max border-2 border-cyan-600 text-cyan-600 text-xl rounded-lg px-8 py-4 flex gap-4 hover:gap-16 items-center hover:bg-cyan-600 hover:text-white transition-all  ease-in-out`
-      >
-        <span>Send me an email</span>
-        <FontAwesomeIcon icon={pageContent.arrowRight} className="rotate-2" />
-      </a>
-    </div>
-    <div class="w-full sm:max-w-lg flex flex-col justify-between">
-      <div>
-        <Typography variant="h2">
-          Programming is the art of turning logic into tangible creations.
-        </Typography>
-        <Typography variant="p" className="sm:!max-w-md">
-          In a world driven by technology, programming enables us to shape the
-          future through lines of code. It's a creative and logical endeavor
-          that empowers us to transform ideas into reality.Whether it's crafting
-          software or building applications, programming is the bridge between
-          imagination and innovation
-        </Typography>
-      </div>
-      <div>
-        <div
-          class="flex flex-wrap justify-center sm:justify-start items-center gap-12"
-        >
-          <Typography
-            variant="p"
-            className="flex items-center flex-col text-xl sm:text-2xl !mb-0"
-          >
-            <span class="text-cyan-600 text-3xl sm:text-4xl font-bold"
-              >100 +</span
-            > projects
-          </Typography>
-          <Typography
-            variant="p"
-            className="flex items-center text-xl sm:text-2xl flex-col !mb-0"
-          >
-            <span class="text-cyan-600 text-3xl sm:text-4xl font-bold"
-              >Hundreds</span
-            >of solved issues
-          </Typography>
+        <div class="w-full sm:max-w-lg flex flex-col justify-between">
+            <div>
+                <Typography variant="h2">
+                    Programming is the art of turning logic into tangible
+                    creations.
+                </Typography>
+                <Typography variant="p" className="sm:!max-w-md">
+                    In a world driven by technology, programming enables us to
+                    shape the future through lines of code. It's a creative and
+                    logical endeavor that empowers us to transform ideas into
+                    reality.Whether it's crafting software or building
+                    applications, programming is the bridge between imagination
+                    and innovation
+                </Typography>
+            </div>
+            <div>
+                <div
+                    class="flex flex-wrap justify-center sm:justify-start items-center gap-12"
+                >
+                    <Typography
+                        variant="p"
+                        className="flex items-center flex-col text-xl sm:text-2xl !mb-0"
+                    >
+                        <span
+                            class="text-cyan-600 text-3xl sm:text-4xl font-bold"
+                            >100 +</span
+                        > projects
+                    </Typography>
+                    <Typography
+                        variant="p"
+                        className="flex items-center text-xl sm:text-2xl flex-col !mb-0"
+                    >
+                        <span
+                            class="text-cyan-600 text-3xl sm:text-4xl font-bold"
+                            >Hundreds</span
+                        >of solved issues
+                    </Typography>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- <Technologies /> -->
 </section>
