@@ -55,7 +55,7 @@ export const pageContent: PageContent = {
         { link: "https://www.instagram.com/alqahol1c/", icon: faInstagram },
     ],
     navLinks: [
-        { icon: faLaptopCode, id: "works", text: "portfolio" },
+        { icon: faLaptopCode, id: "portfolio", text: "portfolio" },
         { icon: faGraduationCap, id: "experience", text: "experience" },
         { icon: faPaperPlane, id: "contact", text: "contact" },
     ],

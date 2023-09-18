@@ -1,0 +1,54 @@
+---
+import layout, { style } from "../../constants/style";
+import Typography from "../react/Typography";
+---
+
+<section class=`${layout.section.light}` id="experience">
+    <div class=`${layout.maxWidth}`>
+        <Typography variant="span">- Experience</Typography>
+        <div
+            class="flex flex-col md:flex-row items-center justify-between gap-12"
+        >
+            <div class="max-w-[65ch]">
+                <Typography variant="h2" className="!mb-0">
+                    Education
+                </Typography>
+                <p class=`${style.textSecondary} mb-8`>1 year 8 months</p>
+                <Typography>
+                    I took part in the <a
+                        class="font-bold underline text-cyan-600 underline-offset-4"
+                        >SoftUni's program for web developers</a
+                    >. I got to talk with experienced senior developers, had
+                    numerous code discussions and reviews as well as plenty of
+                    different tasks and issues to solve.
+                </Typography>
+                <a
+                    href="https://github.com/khanark/SoftUni"
+                    target="_blank"
+                    class="text-cyan-600 underline underline-offset-4"
+                    >Link to my <span class="font-bold text-lg">homeworks</span
+                    >.</a
+                >
+            </div>
+            <div class="max-w-[65ch]">
+                <Typography variant="h2" className="!mb-0">
+                    Freelance
+                </Typography>
+                <p class=`${style.textSecondary} mb-8`>2 years 4 months</p>
+                <Typography>
+                    I've been freelancing since I've graduated the SoftUni's
+                    program for developers. I enjoy communicating with clients
+                    and I can effectivly maintain a productive relationship
+                    between the client and the development process.
+                </Typography>
+                <a
+                    href="https://www.linkedin.com/in/borislav-godumov-7245b61a2/"
+                    target="_blank"
+                    class="text-cyan-600 underline underline-offset-4"
+                    >Check out my <span class="font-bold text-lg">LinkedIn</span
+                    >.</a
+                >
+            </div>
+        </div>
+    </div>
+</section>
