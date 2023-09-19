@@ -1,53 +1,55 @@
 ---
 import layout, { style } from "../../constants/style";
 import Typography from "../react/Typography";
+import { Project, projectData } from "../../constants/constants";
+import ProjectCard from "../react/ProjectCard";
 ---
 
 <section id="portfolio" class=`${layout.section.dark}`>
-    <div class=`${layout.maxWidth}`>
-        <div class="justify-center flex flex-wrap gap-4 mb-24">
-            <i
-                class=`${style.textSecondary} devicon-react-original text-6xl md:text-8xl`
-            ></i>
+  <div class=`${layout.maxWidth}`>
+    <div class="justify-center flex flex-wrap gap-4 mb-24">
+      <i
+        class=`${style.textSecondary} devicon-react-original text-6xl md:text-8xl`
+      ></i>
 
-            <i
-                class=`${style.textSecondary} devicon-angularjs-plain text-6xl md:text-8xl`
-            ></i>
+      <i
+        class=`${style.textSecondary} devicon-angularjs-plain text-6xl md:text-8xl`
+      ></i>
 
-            <i
-                class=`${style.textSecondary} devicon-tailwindcss-plain text-6xl md:text-8xl`
-            ></i>
+      <i
+        class=`${style.textSecondary} devicon-tailwindcss-plain text-6xl md:text-8xl`
+      ></i>
 
-            <i
-                class=`${style.textSecondary} devicon-sass-original text-6xl md:text-8xl`
-            ></i>
+      <i
+        class=`${style.textSecondary} devicon-sass-original text-6xl md:text-8xl`
+      ></i>
 
-            <i
-                class=`${style.textSecondary} devicon-nodejs-plain text-6xl md:text-8xl`
-            ></i>
+      <i
+        class=`${style.textSecondary} devicon-nodejs-plain text-6xl md:text-8xl`
+      ></i>
 
-            <i
-                class=`${style.textSecondary} devicon-mongodb-plain text-6xl md:text-8xl`
-            ></i>
-        </div>
-        <Typography variant="span">- Portfolio</Typography>
-
-        <div class="grid grid-cols-2 gap-16">
-            <div class="max-w-[40ch]">
-                <Typography variant="h2">
-                    Some of my works. <br /> Selected projects.
-                </Typography>
-                <Typography>
-                    I've build numerous projects, varianting from simple console
-                    applications to to fullstack applications.
-                </Typography>
-                <a
-                    href="https://github.com/khanark"
-                    target="_blank"
-                    class="underline underline-offset-4 text-cyan-600"
-                    >Explore more.</a
-                >
-            </div>
-        </div>
+      <i
+        class=`${style.textSecondary} devicon-mongodb-plain text-6xl md:text-8xl`
+      ></i>
     </div>
+    <Typography variant="span">- Portfolio</Typography>
+
+    <div class="grid grid-cols-2 gap-24">
+      <div class="max-w-[40ch]">
+        <Typography variant="h2">
+          Some of my works. <br /> Selected projects.
+        </Typography>
+        <Typography>
+          I've build numerous projects, varianting from simple console
+          applications to to fullstack applications.
+        </Typography>
+        <a
+          href="https://github.com/khanark"
+          target="_blank"
+          class="underline underline-offset-4 text-cyan-600">Explore more.</a
+        >
+      </div>
+      {projectData.map((project: Project) => <ProjectCard {...project} />)}
+    </div>
+  </div>
 </section>
