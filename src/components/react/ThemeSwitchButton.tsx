@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { style } from "../../constants/style";
 import { pageContent } from "../../constants/constants";
 
@@ -14,14 +13,7 @@ const ThemeSwitchButton = ({
       onClick={switchTheme}
       className={`${style.textSecondary} flex gap-2 items-center cursor-pointer`}
     >
-      <FontAwesomeIcon
-        className="text-lg"
-        icon={
-          theme === "dark"
-            ? pageContent.themeSwitchIcons.light
-            : pageContent.themeSwitchIcons.dark
-        }
-      />
+      <i className={`fa-solid ${theme === "dark" ? "fa-sun" : "fa-moon"}`}></i>
       <span className={`${style.textSecondary} text-sm`}>
         {theme === "dark" ? "Dark" : "Light"}
       </span>

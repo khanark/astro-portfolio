@@ -1,7 +1,7 @@
 ---
 import layout, { style } from "../../constants/style";
 import Typography from "../react/Typography";
-import { Project, projectData } from "../../constants/constants";
+import { projectData } from "../../constants/constants";
 import ProjectCard from "../react/ProjectCard";
 ---
 
@@ -34,22 +34,28 @@ import ProjectCard from "../react/ProjectCard";
     </div>
     <Typography variant="span">- Portfolio</Typography>
 
-    <div class="grid grid-cols-2 gap-24">
-      <div class="max-w-[40ch]">
-        <Typography variant="h2">
-          Some of my works. <br /> Selected projects.
-        </Typography>
-        <Typography>
-          I've build numerous projects, varianting from simple console
-          applications to to fullstack applications.
-        </Typography>
-        <a
-          href="https://github.com/khanark"
-          target="_blank"
-          class="underline underline-offset-4 text-cyan-600">Explore more.</a
-        >
+    <div class="flex gap-24">
+      <div class="flex w-1/2 flex-col gap-24">
+        <div class="max-w-[40ch]">
+          <Typography variant="h2">
+            Some of my works. <br /> Selected projects.
+          </Typography>
+          <Typography>
+            I've build numerous projects, varianting from simple console
+            applications to to fullstack applications.
+          </Typography>
+          <a
+            href="https://github.com/khanark"
+            target="_blank"
+            class="underline underline-offset-4 text-cyan-600">Explore more.</a
+          >
+        </div>
+        <ProjectCard {...projectData[0]} />
       </div>
-      {projectData.map((project: Project) => <ProjectCard {...project} />)}
+      <div class="flex w-1/2 flex-col gap-24">
+        <ProjectCard {...projectData[1]} />
+        <ProjectCard {...projectData[2]} />
+      </div>
     </div>
   </div>
 </section>

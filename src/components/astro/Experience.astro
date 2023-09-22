@@ -1,44 +1,57 @@
 ---
 import layout, { style } from "../../constants/style";
 import Typography from "../react/Typography";
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class=`${layout.section.light}` id="experience">
   <div class=`${layout.maxWidth}`>
-    <Typography variant="span">- Experience</Typography>
+    <Typography variant="span">- {t("experience.sectionTitle")}</Typography>
     <div class="flex flex-col md:flex-row items-center justify-between gap-12">
       <div class="max-w-[65ch]">
-        <Typography variant="h2" className="!mb-0">Education</Typography>
-        <p class=`${style.textSecondary} mb-8`>1 year 8 months</p>
+        <Typography variant="h2" className="!mb-0">
+          {t("experience.educationTitle")}
+        </Typography>
+        <p class=`${style.textSecondary} mb-8`>
+          {t("experience.educationSubtitle")}
+        </p>
         <Typography>
-          I took part in the <a
-            class="font-bold underline text-cyan-600 underline-offset-4"
-            >SoftUni's program for web developers</a
-          >. I got to talk with experienced senior developers, had numerous code
-          discussions and reviews as well as plenty of different tasks and
-          issues to solve.
+          {t("experience.educationText.prose1")}
+          <a class="font-bold underline text-cyan-600 underline-offset-4">
+            {t("experience.educationText.link")}</a
+          >. {t("experience.educationText.prose2")}
         </Typography>
         <a
           href="https://github.com/khanark/SoftUni"
           target="_blank"
           class="text-cyan-600 underline underline-offset-4"
-          >Link to my <span class="font-bold text-lg">homeworks</span>.</a
+          >{t("experience.educationCTA")}
+          <span class="font-bold text-lg"
+            >{t("experience.educationCTAbold")}</span
+          >.</a
         >
       </div>
       <div class="max-w-[65ch]">
-        <Typography variant="h2" className="!mb-0">Freelance</Typography>
-        <p class=`${style.textSecondary} mb-8`>2 years 4 months</p>
+        <Typography variant="h2" className="!mb-0">
+          {t("experience.freelanceTitle")}
+        </Typography>
+        <p class=`${style.textSecondary} mb-8`>
+          {t("experience.freelanceSubtitle")}
+        </p>
         <Typography>
-          I've been freelancing since I've graduated the SoftUni's program for
-          developers. I enjoy communicating with clients and I can effectivly
-          maintain a productive relationship between the client and the
-          development process.
+          {t("experience.freelanceText")}
         </Typography>
         <a
           href="https://www.linkedin.com/in/borislav-godumov-7245b61a2/"
           target="_blank"
           class="text-cyan-600 underline underline-offset-4"
-          >Check out my <span class="font-bold text-lg">LinkedIn</span>.</a
+          >{t("experience.freelanceCTA")}<span class="font-bold text-lg"
+            >{t("experience.freelanceCTAbold")}</span
+          >.</a
         >
       </div>
     </div>

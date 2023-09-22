@@ -1,10 +1,13 @@
 ---
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { pageContent } from "../../constants/constants";
 import layout, { style } from "../../constants/style";
 import Typography from "../react/Typography";
 import ProgrammingAnimation from "../../assets/programming-animate.svg";
 import { Image } from "astro:assets";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class=`${layout.section.dark} md:!py-36 relative z-10 overflow-hidden`>
@@ -19,9 +22,8 @@ import { Image } from "astro:assets";
         {
           pageContent.socialLinks.map((link) => (
             <a href={link.link} target="_blank">
-              <FontAwesomeIcon
-                icon={link.icon}
-                className="cursor-pointer text-3xl  text-gray-800 transition duration-300 hover:-translate-y-1 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-500"
+              <i
+                class={`fa-brands ${link.iconName} cursor-pointer text-3xl  text-gray-800 transition duration-300 hover:-translate-y-1 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-500`}
               />
             </a>
           ))
@@ -40,7 +42,7 @@ import { Image } from "astro:assets";
     </div>
 
     <div class="relative z-[1] flex w-full flex-col sm:max-w-[350px] mr-[50px]">
-      <Typography variant="span">- Introduction</Typography>
+      <Typography variant="span">- {t("hero.sectionTitle")}</Typography>
       <div class="absolute top-8 w-1/2 h-px bg-cyan-600"></div>
       <div class="absolute top-8 w-px h-1/2 bg-cyan-600"></div>
       <div
@@ -56,11 +58,10 @@ import { Image } from "astro:assets";
         >
         </div>
         <Typography variant="h2">
-          Software Developer based in Sofia, Bulgaria.
+          {t("hero.subtitle")}
         </Typography>
         <Typography>
-          Driven by the ever-evolving nature of technology, I embrace the
-          challenge of staying current with the latest trends and techniques.
+          {t("hero.subtitle2")}
         </Typography>
       </div>
       <a
@@ -68,8 +69,8 @@ import { Image } from "astro:assets";
         download="filename.ext"
         class="mx-auto sm:mx-0 inline-flex mt-4 w-max items-center gap-3 rounded-md bg-gradient-to-br from-cyan-600 to-cyan-900 px-8 py-4 text-white transition-transform duration-300 hover:scale-105 !ml-auto"
       >
-        <FontAwesomeIcon icon={pageContent.utilityIcons.download} client:only />
-        <span>Take a look at my CV</span>
+        <i class="fa-solid fa-download"></i>
+        <span>{t("hero.cta")}</span>
       </a>
     </div>
   </div>
@@ -79,6 +80,6 @@ import { Image } from "astro:assets";
     class=`${style.textSecondary} absolute bottom-0 left-0 hidden items-center gap-1 p-2 text-xs transition-all duration-300 hover:gap-2 md:flex`
   >
     <span>Web illustrations by Storyset</span>
-    <FontAwesomeIcon icon={pageContent.arrowRight} client:load />
+    <i class="fa-solid fa-arrow-right"></i>
   </a>
 </section>

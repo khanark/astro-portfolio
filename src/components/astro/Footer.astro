@@ -6,7 +6,7 @@ import Typography from "../react/Typography";
 ---
 
 <section
-  class=`${layout.section.dark} !py-28 z-10 relative flex justify-center`
+  class=`${layout.section.light} !py-28 z-10 relative flex justify-center`
 >
   <div class="flex justify-center flex-col gap-6">
     <button
@@ -27,9 +27,8 @@ import Typography from "../react/Typography";
       {
         pageContent.socialLinks.map((link) => (
           <a href={link.link} target="_blank">
-            <FontAwesomeIcon
-              icon={link.icon}
-              className="cursor-pointer text-3xl  text-gray-800 transition duration-300 hover:-translate-y-1 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-500"
+            <i
+              class={`fa-brands ${link.iconName} cursor-pointer text-3xl  text-gray-800 transition duration-300 hover:-translate-y-1 hover:text-gray-600 dark:text-gray-300 dark:hover:text-gray-500`}
             />
           </a>
         ))

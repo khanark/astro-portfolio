@@ -1,9 +1,12 @@
 ---
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { pageContent } from "../../constants/constants";
 import layout from "../../constants/style";
 import Typography from "../react/Typography";
 import Indentation from "./Indentation.astro";
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class=`${layout.section.light}` id="contact">
@@ -12,16 +15,14 @@ import Indentation from "./Indentation.astro";
   >
     <div class="relative flex flex-col justify-between w-full sm:max-w-md">
       <div>
-        <Typography variant="span">- Contact</Typography>
+        <Typography variant="span">- {t("contact.sectionTitle")}</Typography>
         <Indentation />
         <div class="pt-4 pl-4">
           <Typography variant="h2">
-            Embark on a Journey of Connection and Collaboration.
+            {t("contact.leftSubtitle")}
           </Typography>
           <Typography>
-            Feel free to reach out to me for any inquiries or collaboration
-            opportunities. I'm always eager to connect and engage with
-            like-minded individuals.
+            {t("contact.leftSubtitle2")}
           </Typography>
         </div>
       </div>
@@ -29,21 +30,17 @@ import Indentation from "./Indentation.astro";
         href="mailto:borislav.godumov@outlook.com"
         class=`group w-max border-2 border-cyan-600 text-cyan-600 text-xl rounded-lg px-8 py-4 flex gap-4 hover:gap-16 items-center hover:bg-cyan-600 hover:text-white transition-all  ease-in-out`
       >
-        <span>Send me an email</span>
-        <FontAwesomeIcon icon={pageContent.arrowRight} className="rotate-2" />
+        <span>{t("contact.CTA")}</span>
+        <i class="fa-solid fa-arrow-right rotate-2"></i>
       </a>
     </div>
     <div class="w-full sm:max-w-lg flex flex-col justify-between">
       <div>
         <Typography variant="h2">
-          Programming is the art of turning logic into tangible creations.
+          {t("contact.rightSubtitle")}
         </Typography>
         <Typography variant="p" className="sm:!max-w-md">
-          In a world driven by technology, programming enables us to shape the
-          future through lines of code. It's a creative and logical endeavor
-          that empowers us to transform ideas into reality.Whether it's crafting
-          software or building applications, programming is the bridge between
-          imagination and innovation
+          {t("contact.rightSubtitle2")}
         </Typography>
       </div>
       <div>
@@ -56,15 +53,16 @@ import Indentation from "./Indentation.astro";
           >
             <span class="text-cyan-600 text-3xl sm:text-4xl font-bold"
               >100 +</span
-            > projects
+            >
+            {t("contact.span1")}
           </Typography>
           <Typography
             variant="p"
             className="flex items-center text-xl sm:text-2xl flex-col !mb-0"
           >
             <span class="text-cyan-600 text-3xl sm:text-4xl font-bold"
-              >Hundreds</span
-            >of solved issues
+              >{t("contact.span2")}</span
+            >{t("contact.span3")}
           </Typography>
         </div>
       </div>

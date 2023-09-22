@@ -75,17 +75,13 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
           <div className="flex items-center gap-2">
             <ThemeSwitchButton theme={theme} switchTheme={switchTheme} />
           </div>
-          <LanguageOptions borderless={true} />
+          <LanguageOptions borderless={true} lang={lang} />
         </div>
         <ul
           className={`${style.textSecondary} hidden w-[400px] justify-between lg:flex`}
         >
           {pageContent.navLinks.map((link, index) => (
-            <LinkWithIcon
-              key={index}
-              {...link}
-              text={t(`nav.${"portfolio"}`)}
-            />
+            <LinkWithIcon key={index} {...link} text={t(`nav.contact`)} />
           ))}
         </ul>
         {/* Mobile */}
@@ -126,7 +122,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
               <div className="h-px w-full bg-gray-700" />
               <div className="flex items-center justify-between gap-4">
                 <ThemeSwitchButton theme={theme} switchTheme={switchTheme} />
-                <LanguageOptions />
+                <LanguageOptions lang={lang} />
               </div>
             </motion.div>
           )}
