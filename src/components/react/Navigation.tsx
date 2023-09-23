@@ -81,7 +81,11 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
           className={`${style.textSecondary} hidden w-[400px] justify-between lg:flex`}
         >
           {pageContent.navLinks.map((link, index) => (
-            <LinkWithIcon key={index} {...link} text={t(`nav.contact`)} />
+            <LinkWithIcon
+              key={index}
+              {...link}
+              text={t(`nav.${link.text}` as any)}
+            />
           ))}
         </ul>
         {/* Mobile */}
