@@ -110,7 +110,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="lg:hidden h-full fixed bottom-0 left-0 bg-gray-100/90 dark:bg-gray-950/90 w-full flex justify-center items-center flex-col gap-4 text-full backdrop-blur-sm"
-              onClick={toggleDropDownMenu}
+              // onClick={toggleDropDownMenu}
             >
               <ul
                 className={`${style.textSecondary} flex flex-col justify-between`}
@@ -119,6 +119,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
                   <LinkWithIcon
                     key={index}
                     {...link}
+                    text={t(`nav.${link.text}` as any)}
                     toggleDropDownMenu={toggleDropDownMenu}
                   />
                 ))}

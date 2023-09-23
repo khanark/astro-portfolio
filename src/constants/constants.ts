@@ -25,6 +25,7 @@ export type NavLink = {
   text: string;
   iconName: Icon;
   toggleDropDownMenu?: () => void;
+  translate?: (id: string) => void;
 };
 
 export interface Project {
