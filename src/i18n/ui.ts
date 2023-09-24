@@ -12,6 +12,9 @@ export const ui = {
     "nav.portfolio": "Portfolio",
     "nav.experience": "Experience",
     "nav.contact": "Contact Me",
+    "nav.theme.dark": "Dark",
+    "nav.theme.light": "Light",
+    "Nav.blogLink": "Blog",
     // Hero
     "hero.sectionTitle": "Introduction",
     "hero.subtitle": "Software Developer based in Sofia, Bulgaria.",
@@ -48,12 +51,28 @@ export const ui = {
       "I've been freelancing since I've graduated the SoftUni's program for developers. I enjoy communicating with clients and I can effectivly maintain a productive relationship between the client and the development process.",
     "experience.freelanceCTA": "Check out my ",
     "experience.freelanceCTAbold": "LinkedIn",
+    // projects
+    "projects.sectionTitle": "Portfolio",
+    "projects.subtitle": "Some of my works.", 
+    "projects.subtitle2": "Selected projects.",
+    "projects.text": "I've build numerous projects, variating from simple console applications to to fullstack applications.",
+    "projects.cta": "Explore more.",
+    // blog demo
+    "demoBlog.sectionTitle": "Blog",
+    "demoBlog.subtitle": "What's new?",
+    "demoBlog.subtitle2": "My blog and news.",
+    "demoBlog.cta": "Read the rest.",
+    "demoBlog.testimonialText": "Borislav is a talented web developer with vast knowledge in Front-End technologies. I was impressed when I interviewed him. He will be great fit for any software company.",
+    "demoBlog.testimonialAuthor": "Dimitar Bonev"
   },
   es: {
     // Navigation
     "nav.portfolio": "Portfolio",
     "nav.experience": "Experiencia",
     "nav.contact": "Contactame",
+    "nav.theme.dark": "Oscuro",
+    "nav.theme.light": "Claro",
+    "Nav.blogLink": "Blog",
     // Hero
     "hero.sectionTitle": "Introducción",
     "hero.subtitle": "Desarrollador de software con sede en Sofía, Bulgaria",
@@ -90,12 +109,28 @@ export const ui = {
       "He estado trabajando como freelance desde que me gradué del programa de SoftUni para desarrolladores. Disfruto comunicarme con los clientes y puedo mantener una relación productiva entre el cliente y el proceso de desarrollo.",
     "experience.freelanceCTA": "Mira mi ",
     "experience.freelanceCTAbold": "LinkedIn",
+    // projects
+    "projects.sectionTitle": "Portfolio",
+    "projects.subtitle": "Algunos de mis trabajos.",
+    "projects.subtitle2": "Proyectos seleccionados.",
+    "projects.text": "He realizado numerosos proyectos, que van desde aplicaciones de consola simples hasta aplicaciones fullstack.",
+    "projects.cta": "Explora más.",
+    // blog demo
+    "demoBlog.sectionTitle": "Blog",
+    "demoBlog.subtitle": "¿Qué hay de nuevo?",
+    "demoBlog.subtitle2": "Mi blog y noticias.",
+    "demoBlog.cta": "Leer más.",
+    "demoBlog.testimonialText": "Borislav es un talentoso desarrollador web con amplios conocimientos en tecnologías Front-End. Me impresionó cuando lo entrevisté. Será un gran ajuste para cualquier empresa de software.",
+    "demoBlog.testimonialAuthor": "Dimitar Bonev"
   },
   bg: {
     // Navigation
     "nav.portfolio": "Портфолио",
     "nav.experience": "Опит",
     "nav.contact": "Контакти",
+    "nav.theme.dark": "Тъмна",
+    "nav.theme.light": "Светла",
+    "Nav.blogLink": "Блог",
     // Hero
     "hero.sectionTitle": "Представяне",
     "hero.subtitle": "Софтуерен разработчик, базиран в София, България",
@@ -104,14 +139,14 @@ export const ui = {
     "hero.cta": "Разгледай моето CV",
     // Contact
     "contact.sectionTitle": "Контакти",
-    "contact.leftSubtitle": "Започнете пътешествие на връзка и сътрудничество.",
+    "contact.leftSubtitle": "Започнете пътешествие на доверие и сътрудничество.",
     "contact.leftSubtitle2":
-      "Не се колебайте да се свържете с мен за всякакви въпроси или възможности за сътрудничество. Винаги съм готов да се свържа и ангажирам с хора с подобни интереси.",
+      "Не се колебайте да се свържете с мен за всякакви въпроси или възможности за сътрудничество. Винаги съм готов да се ангажирам с хора с подобни интереси.",
     "contact.CTA": "Изпрати ми имейл",
     "contact.rightSubtitle":
       "Програмирането е изкуството да превръщаш логиката в конкретни творения.",
     "contact.rightSubtitle2":
-      "В свят, управляван от технологиите, програмирането ни позволява да оформяме бъдещето чрез редове код. Това е творческо и логическо усилие, което ни позволява да превръщаме идеите в реалност. Без значение дали става въпрос за създаване на софтуер или изграждане на приложения, програмирането е мостът между въображението и иновациите.",
+      "В свят, управляван от технологиите, програмирането ни позволява да оформяме бъдещето чрез редове код. Без значение дали става въпрос за създаване на софтуер или изграждане на приложения, то е мостът между въображението и иновациите.",
     "contact.span1": "проекти",
     "contact.span2": "Стотици",
     "contact.span3": "решени проблеми",
@@ -132,5 +167,18 @@ export const ui = {
       "Работя като фрийлансер откакто завърших програмата на SoftUni за разработчици. Харесвам комуникацията с клиентите и мога да поддържам продуктивна връзка между клиента и процеса на разработка.",
     "experience.freelanceCTA": "Провери моя ",
     "experience.freelanceCTAbold": "LinkedIn",
+    // projects
+    "projects.sectionTitle": "Портфолио",
+    "projects.subtitle": "Някои от моите проекти.",
+    "projects.subtitle2": "Избрани проекти.",
+    "projects.text": "Изградих множество проекти, вариращи от прости конзолни приложения до fullstack приложения.",
+    "projects.cta": "Разгледай повече.",
+    // blog demo
+    "demoBlog.sectionTitle": "Блог",
+    "demoBlog.subtitle": "Какво ново?",
+    "demoBlog.subtitle2": "Моят блог и новини.",
+    "demoBlog.cta": "Прочети останалото.",
+    "demoBlog.testimonialText": "Борислав е талантлив web developer с широки познания в технологиите Front-End. Впечатлих се от знанията му, когато го интервюирах. Той ще бъде отлично допълнение за всяка софтуерна компания.",
+    "demoBlog.testimonialAuthor": "Димитър Бонев"
   },
 } as const;

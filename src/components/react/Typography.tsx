@@ -2,7 +2,7 @@ import { style } from "../../constants/style";
 
 const Title = ({ children }: { children: React.ReactNode }) => {
   return (
-    <h1 className="before font-Poppins relative mb-8 bg-gradient-to-br from-cyan-900 to-cyan-600 bg-clip-text pb-8 text-5xl font-bold text-transparent before:absolute before:bottom-0 before:h-2 before:w-20 text-center sm:text-start before:rounded-full before:bg-cyan-600 dark:from-cyan-600 dark:to-cyan-300 md:text-8xl before:left-1/2 before:-translate-x-1/2 sm:before:left-0 sm:before:translate-x-0">
+    <h1 className="before font-Poppins relative mb-8 bg-gradient-to-br from-cyan-900 to-cyan-600 bg-clip-text pb-8 text-5xl font-extrabold text-transparent before:absolute before:bottom-0 before:h-2 before:w-20 text-center sm:text-start before:rounded-full before:bg-cyan-600 dark:from-cyan-600 dark:to-cyan-300 md:text-8xl before:left-1/2 before:-translate-x-1/2 sm:before:left-0 sm:before:translate-x-0">
       {children}
     </h1>
   );

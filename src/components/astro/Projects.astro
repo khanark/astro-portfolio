@@ -3,6 +3,11 @@ import layout, { style } from "../../constants/style";
 import Typography from "../react/Typography";
 import { projectData } from "../../constants/constants";
 import ProjectCard from "../react/ProjectCard";
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="portfolio" class=`${layout.section.dark}`>
@@ -32,22 +37,21 @@ import ProjectCard from "../react/ProjectCard";
         class=`${style.textSecondary} devicon-mongodb-plain text-6xl md:text-8xl`
       ></i>
     </div>
-    <Typography variant="span">- Portfolio</Typography>
+    <Typography variant="span">- {t("projects.sectionTitle")}</Typography>
 
     <div class="flex gap-24">
       <div class="flex w-1/2 flex-col gap-24">
         <div class="max-w-[40ch]">
           <Typography variant="h2">
-            Some of my works. <br /> Selected projects.
+            {t("projects.subtitle")} <br /> {t("projects.subtitle2")}
           </Typography>
           <Typography>
-            I've build numerous projects, varianting from simple console
-            applications to to fullstack applications.
+            {t("projects.text")}
           </Typography>
           <a
             href="https://github.com/khanark"
             target="_blank"
-            class="underline underline-offset-4 text-cyan-600">Explore more.</a
+            class="underline underline-offset-4 text-cyan-600">{t("projects.cta")}</a
           >
         </div>
         <ProjectCard {...projectData[0]} />

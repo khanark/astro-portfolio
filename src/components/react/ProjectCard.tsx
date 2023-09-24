@@ -8,7 +8,7 @@ const ProjectCardHeader = ({
   projectStack,
 }: Project) => (
   <div>
-    <div className="flex group justify-between items-center">
+    <div className="flex flex-wrap gap-2 group justify-between items-center">
       <Typography variant="h2" className="!font-normal !mb-2">
         {projectName}
       </Typography>
@@ -16,7 +16,7 @@ const ProjectCardHeader = ({
         {projectType.join(", ")}
       </Typography>
     </div>
-    <div className="flex gap-2">
+    <div className="flex flex-wrap gap-2">
       {projectStack.map((tech) => (
         <Typography
           key={tech}
@@ -43,7 +43,7 @@ const ProjectCard = ({
 }: Project) => {
   return (
     <a
-      className={`${layout.section.light} group !p-12`}
+      className={`${layout.section.light} h-[600px] group !p-12`}
       href={projectLink}
       target="_blank"
     >

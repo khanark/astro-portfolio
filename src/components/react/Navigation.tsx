@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import layout, { style } from "../../constants/style";
 import { pageContent } from "../../constants/constants";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ThemeSwitchButton from "./ThemeSwitchButton";
 import LinkWithIcon from "./LinkWithIcon";
 import LanguageOptions from "./LanguageOptions";
@@ -12,6 +12,8 @@ import { useTranslations } from "../../i18n/utils";
 const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
   const [dropDownMenu, setDropDownMenu] = useState<boolean>(false);
   const [theme, setTheme] = useState<string>("dark");
+
+  const listRef = useRef<HTMLUListElement>(null)
 
   const t = useTranslations(lang);
 
@@ -41,6 +43,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
   }, []);
 
   const toggleDropDownMenu = () => {
+    // make so whenever the user clicks the language buttons the dropdown navigation doesn't close
     setDropDownMenu((prev) => !prev);
   };
 
@@ -65,7 +68,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
           </a>
           <a
             href="/blog"
-            className="text-cyan-900 dark:text-cyan-600 font-bold font-FiraCode tracking-wider text-sm hover:underline underline-offset-4"
+            className="text-cyan-900 dark:text-cyan-600 font-bold font-FiraCode tracking-wider text-sm underline underline-offset-4"
           >
             Blog
           </a>
@@ -73,7 +76,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
         {/* Desktop devices */}
         <div className="hidden items-center gap-8 lg:flex">
           <div className="flex items-center gap-2">
-            <ThemeSwitchButton theme={theme} switchTheme={switchTheme} />
+            <ThemeSwitchButton theme={theme} switchTheme={switchTheme} text={ theme === "dark" ? t("nav.theme.dark") : t("nav.theme.light") } />
           </div>
           <LanguageOptions borderless={true} lang={lang} />
         </div>
@@ -114,6 +117,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
             >
               <ul
                 className={`${style.textSecondary} flex flex-col justify-between`}
+                ref={listRef}
               >
                 {pageContent.navLinks.map((link, index) => (
                   <LinkWithIcon
@@ -126,7 +130,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
               </ul>
               <div className="h-px w-full bg-gray-700" />
               <div className="flex items-center justify-between gap-4">
-                <ThemeSwitchButton theme={theme} switchTheme={switchTheme} />
+                <ThemeSwitchButton theme={theme} switchTheme={switchTheme} text={theme === "dark" ? t("nav.theme.dark") : t("nav.theme.light")} />
                 <LanguageOptions lang={lang} />
               </div>
             </motion.div>

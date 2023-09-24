@@ -1,12 +1,13 @@
 import { style } from "../../constants/style";
-import { pageContent } from "../../constants/constants";
 
 const ThemeSwitchButton = ({
   theme,
   switchTheme,
+  text
 }: {
   theme: string;
-  switchTheme: any;
+    switchTheme: any;
+  text: string;
 }) => {
   return (
     <button
@@ -15,7 +16,8 @@ const ThemeSwitchButton = ({
     >
       <i className={`fa-solid ${theme === "dark" ? "fa-sun" : "fa-moon"}`}></i>
       <span className={`${style.textSecondary} text-sm`}>
-        {theme === "dark" ? "Dark" : "Light"}
+        {/* {theme === "dark" ? "Dark" : "Light"} */}
+        { text}
       </span>
     </button>
   );
