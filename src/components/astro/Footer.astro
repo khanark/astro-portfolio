@@ -1,8 +1,12 @@
 ---
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { pageContent } from "../../constants/constants";
 import layout, { style } from "../../constants/style";
 import Typography from "../react/Typography";
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section
@@ -20,8 +24,8 @@ import Typography from "../react/Typography";
       className="relative z-1 after:-bottom-3 after:left-1/2 after:translate-x-[-50%] after:absolute after:w-12 after:h-[2px] after:z-30 after:bg-cyan-600"
     >
       <span class=`${style.textPrimary} text-xl font-bold`
-        >Thanks for scrolling</span
-      > that's all folks.
+        >{t("footer.thanks")}</span
+      >{t("footer.folks")}
     </Typography>
     <div class="mx-auto flex gap-4">
       {

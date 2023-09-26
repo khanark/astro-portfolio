@@ -13,8 +13,6 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
   const [dropDownMenu, setDropDownMenu] = useState<boolean>(false);
   const [theme, setTheme] = useState<string>("dark");
 
-  const listRef = useRef<HTMLUListElement>(null)
-
   const t = useTranslations(lang);
 
   const switchTheme = () => {
@@ -29,6 +27,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
     }
   };
 
+  
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
     if (localTheme) {
@@ -41,16 +40,15 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
       document.documentElement.classList.add("dark");
     }
   }, []);
-
+  
   const toggleDropDownMenu = () => {
-    // make so whenever the user clicks the language buttons the dropdown navigation doesn't close
     setDropDownMenu((prev) => !prev);
   };
 
   return (
     <div
       id="nav-main"
-      className={`${layout.section.dark} sticky top-0 !p-0 z-30`}
+      className={`${layout.section.dark} sticky relative top-0 !p-0 z-30 bg-opacity-90 dark:bg-opacity-90 backdrop-filter backdrop-blur-sm dark:backdrop-blur-sm shadow-md`}
     >
       <nav
         className={`${layout.maxWidth} flex items-center justify-between px-4 h-16`}
@@ -117,7 +115,6 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
             >
               <ul
                 className={`${style.textSecondary} flex flex-col justify-between`}
-                ref={listRef}
               >
                 {pageContent.navLinks.map((link, index) => (
                   <LinkWithIcon
@@ -129,7 +126,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
                 ))}
               </ul>
               <div className="h-px w-full bg-gray-700" />
-              <div className="flex items-center justify-between gap-4">
+              <div className="flex relative items-center justify-between gap-4">
                 <ThemeSwitchButton theme={theme} switchTheme={switchTheme} text={theme === "dark" ? t("nav.theme.dark") : t("nav.theme.light")} />
                 <LanguageOptions lang={lang} />
               </div>

@@ -15,6 +15,8 @@ const LanguageOptions = ({ borderless, lang }: Props) => {
     // Add more languages as needed
   };
 
+  const menuRef = useRef<any>(null);
+
   const [showLanguageOptions, setShowLanguageOptions] =
     useState<boolean>(false);
 
@@ -27,7 +29,7 @@ const LanguageOptions = ({ borderless, lang }: Props) => {
   };
 
   return (
-    <div className="relative w-auto">
+    <div className="w-auto">
       <button
         className={`${style.textSecondary} ${
           !borderless ? "rounded-md border border-gray-300" : ""
@@ -45,7 +47,7 @@ const LanguageOptions = ({ borderless, lang }: Props) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className={`${style.textPrimary} absolute top-full p-2 border-2 border-gray-600 rounded-lg`}
+          className={`${style.textPrimary} absolute flex flex-col top-full p-2 border-2 border-gray-600 rounded-lg`}
         >
           {Object.keys(languages).map((lang) => {
             return (

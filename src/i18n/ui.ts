@@ -63,7 +63,10 @@ export const ui = {
     "demoBlog.subtitle2": "My blog and news.",
     "demoBlog.cta": "Read the rest.",
     "demoBlog.testimonialText": "Borislav is a talented web developer with vast knowledge in Front-End technologies. I was impressed when I interviewed him. He will be great fit for any software company.",
-    "demoBlog.testimonialAuthor": "Dimitar Bonev"
+    "demoBlog.testimonialAuthor": "Dimitar Bonev",
+    // footer
+    "footer.thanks": "Thanks for scrooling, ",
+    "footer.folks": "that's all folks!",
   },
   es: {
     // Navigation
@@ -121,7 +124,10 @@ export const ui = {
     "demoBlog.subtitle2": "Mi blog y noticias.",
     "demoBlog.cta": "Leer más.",
     "demoBlog.testimonialText": "Borislav es un talentoso desarrollador web con amplios conocimientos en tecnologías Front-End. Me impresionó cuando lo entrevisté. Será un gran ajuste para cualquier empresa de software.",
-    "demoBlog.testimonialAuthor": "Dimitar Bonev"
+    "demoBlog.testimonialAuthor": "Dimitar Bonev",
+    // footer
+    "footer.thanks": "Gracias por desplazarte, ",
+    "footer.folks": "eso es todo amigos!",
   },
   bg: {
     // Navigation
@@ -178,7 +184,11 @@ export const ui = {
     "demoBlog.subtitle": "Какво ново?",
     "demoBlog.subtitle2": "Моят блог и новини.",
     "demoBlog.cta": "Прочети останалото.",
-    "demoBlog.testimonialText": "Борислав е талантлив web developer с широки познания в технологиите Front-End. Впечатлих се от знанията му, когато го интервюирах. Той ще бъде отлично допълнение за всяка софтуерна компания.",
-    "demoBlog.testimonialAuthor": "Димитър Бонев"
+    "demoBlog.testimonialText": "Борислав е талантлив web developer с широки познания в технологиите, и по - точно Front-End. Впечатлих се от знанията му, докато го интервюирах. Той ще бъде отлично допълнение за всяка софтуерна компания.",
+    "demoBlog.testimonialAuthor": "Димитър Бонев",
+    // footer
+    "footer.thanks": "Благодаря за скролването, ",
+    "footer.folks": "това е всичко приятели!",
+
   },
 } as const;
