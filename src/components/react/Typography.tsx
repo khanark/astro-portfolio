@@ -38,13 +38,19 @@ const Paragraph = ({
   return <p className={`${style.textSecondary} mb-8 ${classes}`}>{children}</p>;
 };
 
-const SectionHeading = ({ children }: { children: React.ReactNode }) => {
+const SectionHeading = ({
+  children,
+  classes,
+}: {
+  classes?: string;
+  children: React.ReactNode;
+}) => {
   return (
-    <span
-      className={`${style.textSecondary} font-FiraCode block mb-4 text-base font-bold tracking-widest`}
+    <h5
+      className={`${style.textSecondary} font-FiraCode block mb-4 text-base font-bold tracking-widest ${classes}`}
     >
       {children}
-    </span>
+    </h5>
   );
 };
 

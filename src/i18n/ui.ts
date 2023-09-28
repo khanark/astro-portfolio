@@ -31,7 +31,7 @@ export const ui = {
     "contact.rightSubtitle":
       "Programming is the art of turning logic into tangible creations.",
     "contact.rightSubtitle2":
-      "In a world driven by technology, programming enables us to shape the future through lines of code. It's a creative and logical endeavor that empowers us to transform ideas into reality.Whether it's crafting software or building applications, programming is the bridge between imagination and innovation.",
+      "In a world driven by technology, programming enables us to shape the future through lines of code. It's a creative and logical endeavor that empowers us to transform ideas into reality.",
     "contact.span1": "projects",
     "contact.span2": "Hundreds",
     "contact.span3": "of solved problems",
@@ -91,7 +91,7 @@ export const ui = {
     "contact.rightSubtitle":
       "La programación es el arte de convertir la lógica en creaciones tangibles.",
     "contact.rightSubtitle2":
-      "En un mundo impulsado por la tecnología, la programación nos permite dar forma al futuro a través de líneas de código. Es un esfuerzo creativo y lógico que nos permite transformar las ideas en realidad. Ya sea que se trate de crear software o construir aplicaciones, la programación es el puente entre la imaginación y la innovación.",
+      "En un mundo impulsado por la tecnología, la programación nos permite dar forma al futuro a través de líneas de código. Es un esfuerzo creativo y lógico que nos permite transformar las ideas en realidad.",
     "contact.span1": "proyectos",
     "contact.span2": "Cientos",
     "contact.span3": "de problemas resueltos",

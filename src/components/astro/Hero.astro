@@ -42,11 +42,9 @@ const t = useTranslations(lang);
     </div>
 
     <div class="relative z-[1] flex w-full flex-col sm:max-w-[370px]">
-      <Typography variant="span">- {t("hero.sectionTitle")}</Typography>
-      <div class="absolute top-8 w-1/2 h-px bg-cyan-600"></div>
-      <div class="absolute top-8 w-px h-1/2 bg-cyan-600"></div>
+      <Typography variant="span">{t("hero.sectionTitle")}</Typography>
       <div
-        class="flex pl-4 pt-4 flex-1 flex-col items-center justify-between sm:items-start"
+        class="flex flex-1 flex-col items-center justify-between sm:items-start"
       >
         <div
           id="hero-gradient"
@@ -80,6 +78,6 @@ const t = useTranslations(lang);
     class=`${style.textSecondary} absolute bottom-0 left-0 hidden items-center gap-1 p-2 text-xs transition-all duration-300 hover:gap-2 md:flex`
   >
     <span>Web illustrations by Storyset</span>
-    <i class="fa-solid fa-arrow-right"></i>
+    <i class="fa-solid fa-arrow-right text-xs"></i>
   </a>
 </section>

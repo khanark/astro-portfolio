@@ -1,13 +1,12 @@
 import {
   faMoon,
   faSun,
-  faGraduationCap,
-  faLaptopCode,
-  faPaperPlane,
   faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons";
 
-import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
+import YummiDesktop from "../assets/yummi_photos/yummiDesktop.png"
+import YummiMobile from "../assets/yummi_photos/YummiMobile.png"
 
 interface IconMap {
   [key: string]: IconDefinition;
@@ -31,7 +30,7 @@ export type NavLink = {
 export interface Project {
   projectName: string;
   projectType: string[];
-  projectPhoto?: string;
+  projectPhotos?: ImageMetadata[];
   projectLink?: string;
   projectStack: string[];
 }
@@ -77,6 +76,7 @@ export const projectData: ProjectData = [
     projectType: ["cooking", "product"],
     projectLink: "https://yummibg.netlify.app/",
     projectStack: ["Angular", "TypeScript", "TailwindCSS"],
+    projectPhotos: [YummiDesktop, YummiMobile],
   },
   {
     projectName: "Lavacoder",

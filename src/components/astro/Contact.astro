@@ -10,36 +10,33 @@ const t = useTranslations(lang);
 ---
 
 <section class=`${layout.section.light}` id="contact">
+  <Typography variant="span" className="!text-center !mb-16">{t("contact.sectionTitle")}</Typography>
   <div
-    class=`${layout.maxWidth} flex flex-col sm:flex-row justify-between gap-14`
+    class=`${layout.maxWidthSecondary} flex flex-col sm:flex-row justify-between gap-12`
   >
-    <div class="relative flex flex-col justify-between w-full sm:max-w-md text-wrap">
+    <div class="relative flex flex-col justify-between w-full sm:max-w-[65ch]">
       <div>
-        <Typography variant="span">- {t("contact.sectionTitle")}</Typography>
-        <Indentation />
-        <div class="pt-4 pl-4">
-          <Typography variant="h2">
+          <Typography variant="h2" className="text-wrap">
             {t("contact.leftSubtitle")}
           </Typography>
           <Typography>
             {t("contact.leftSubtitle2")}
           </Typography>
-        </div>
       </div>
       <a
         href="mailto:borislav.godumov@outlook.com"
-        class=`underline underline-offset-4 text-cyan-600 font-bold text-lg`
+        class=`flex gap-4 items-center underline underline-offset-4 text-cyan-600 font-semibold text-xl`
       >
         <span>{t("contact.CTA")}</span>
-        <i class="fa-solid fa-arrow-right rotate-2"></i>
+        <i class="fa-solid text-base fa-arrow-right rotate-2"></i>
       </a>
     </div>
-    <div class="w-full sm:max-w-lg flex flex-col justify-between text-wrap">
+    <div class="w-full sm:max-w-[65ch] flex flex-col justify-between">
       <div>
-        <Typography variant="h2">
+        <Typography variant="h2" className="text-wrap">
           {t("contact.rightSubtitle")}
         </Typography>
-        <Typography variant="p" className="sm:!max-w-md">
+        <Typography>
           {t("contact.rightSubtitle2")}
         </Typography>
       </div>
