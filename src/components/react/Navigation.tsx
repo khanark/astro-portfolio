@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import layout, { style } from "../../constants/style";
 import { pageContent } from "../../constants/constants";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import ThemeSwitchButton from "./ThemeSwitchButton";
 import LinkWithIcon from "./LinkWithIcon";
 import LanguageOptions from "./LanguageOptions";
@@ -27,7 +27,6 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
     }
   };
 
-  
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
     if (localTheme) {
@@ -40,7 +39,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
       document.documentElement.classList.add("dark");
     }
   }, []);
-  
+
   const toggleDropDownMenu = () => {
     setDropDownMenu((prev) => !prev);
   };
@@ -74,7 +73,13 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
         {/* Desktop devices */}
         <div className="hidden items-center gap-8 lg:flex">
           <div className="flex items-center gap-2">
-            <ThemeSwitchButton theme={theme} switchTheme={switchTheme} text={ theme === "dark" ? t("nav.theme.dark") : t("nav.theme.light") } />
+            <ThemeSwitchButton
+              theme={theme}
+              switchTheme={switchTheme}
+              text={
+                theme === "dark" ? t("nav.theme.dark") : t("nav.theme.light")
+              }
+            />
           </div>
           <LanguageOptions borderless={true} lang={lang} />
         </div>
@@ -127,7 +132,15 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
               </ul>
               <div className="h-px w-full bg-gray-700" />
               <div className="flex relative items-center justify-between gap-4">
-                <ThemeSwitchButton theme={theme} switchTheme={switchTheme} text={theme === "dark" ? t("nav.theme.dark") : t("nav.theme.light")} />
+                <ThemeSwitchButton
+                  theme={theme}
+                  switchTheme={switchTheme}
+                  text={
+                    theme === "dark"
+                      ? t("nav.theme.dark")
+                      : t("nav.theme.light")
+                  }
+                />
                 <LanguageOptions lang={lang} />
               </div>
             </motion.div>

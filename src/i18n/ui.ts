@@ -53,16 +53,18 @@ export const ui = {
     "experience.freelanceCTAbold": "LinkedIn",
     // projects
     "projects.sectionTitle": "Portfolio",
-    "projects.subtitle": "Some of my works.", 
+    "projects.subtitle": "Some of my works.",
     "projects.subtitle2": "Selected projects.",
-    "projects.text": "I've build numerous projects, variating from simple console applications to to fullstack applications.",
+    "projects.text":
+      "I've build numerous projects, variating from simple console applications to fullstack applications.",
     "projects.cta": "Explore more.",
     // blog demo
     "demoBlog.sectionTitle": "Blog",
     "demoBlog.subtitle": "What's new?",
     "demoBlog.subtitle2": "My blog and news.",
     "demoBlog.cta": "Read the rest.",
-    "demoBlog.testimonialText": "Borislav is a talented web developer with vast knowledge in Front-End technologies. I was impressed when I interviewed him. He will be great fit for any software company.",
+    "demoBlog.testimonialText":
+      "Borislav is a talented web developer with vast knowledge in Front-End technologies. I was impressed when I interviewed him. He will be great fit for any software company.",
     "demoBlog.testimonialAuthor": "Dimitar Bonev",
     // footer
     "footer.thanks": "Thanks for scrooling, ",
@@ -116,14 +118,16 @@ export const ui = {
     "projects.sectionTitle": "Portfolio",
     "projects.subtitle": "Algunos de mis trabajos.",
     "projects.subtitle2": "Proyectos seleccionados.",
-    "projects.text": "He realizado numerosos proyectos, que van desde aplicaciones de consola simples hasta aplicaciones fullstack.",
+    "projects.text":
+      "He realizado numerosos proyectos, que van desde aplicaciones de consola simples hasta aplicaciones fullstack.",
     "projects.cta": "Explora más.",
     // blog demo
     "demoBlog.sectionTitle": "Blog",
     "demoBlog.subtitle": "¿Qué hay de nuevo?",
     "demoBlog.subtitle2": "Mi blog y noticias.",
     "demoBlog.cta": "Leer más.",
-    "demoBlog.testimonialText": "Borislav es un talentoso desarrollador web con amplios conocimientos en tecnologías Front-End. Me impresionó cuando lo entrevisté. Será un gran ajuste para cualquier empresa de software.",
+    "demoBlog.testimonialText":
+      "Borislav es un talentoso desarrollador web con amplios conocimientos en tecnologías Front-End. Me impresionó cuando lo entrevisté. Será un gran ajuste para cualquier empresa de software.",
     "demoBlog.testimonialAuthor": "Dimitar Bonev",
     // footer
     "footer.thanks": "Gracias por desplazarte, ",
@@ -145,7 +149,8 @@ export const ui = {
     "hero.cta": "Разгледай моето CV",
     // Contact
     "contact.sectionTitle": "Контакти",
-    "contact.leftSubtitle": "Започнете пътешествие на доверие и сътрудничество.",
+    "contact.leftSubtitle":
+      "Започнете пътешествие на доверие и сътрудничество.",
     "contact.leftSubtitle2":
       "Не се колебайте да се свържете с мен за всякакви въпроси или възможности за сътрудничество. Винаги съм готов да се ангажирам с хора с подобни интереси.",
     "contact.CTA": "Изпрати ми имейл",
@@ -177,18 +182,19 @@ export const ui = {
     "projects.sectionTitle": "Портфолио",
     "projects.subtitle": "Някои от моите проекти.",
     "projects.subtitle2": "Избрани проекти.",
-    "projects.text": "Изградих множество проекти, вариращи от прости конзолни приложения до fullstack приложения.",
+    "projects.text":
+      "Изградих множество проекти, вариращи от прости конзолни приложения до fullstack приложения.",
     "projects.cta": "Разгледай повече.",
     // blog demo
     "demoBlog.sectionTitle": "Блог",
     "demoBlog.subtitle": "Какво ново?",
     "demoBlog.subtitle2": "Моят блог и новини.",
     "demoBlog.cta": "Прочети останалото.",
-    "demoBlog.testimonialText": "Борислав е талантлив web developer с широки познания в технологиите, и по - точно Front-End. Впечатлих се от знанията му, докато го интервюирах. Той ще бъде отлично допълнение за всяка софтуерна компания.",
+    "demoBlog.testimonialText":
+      "Борислав е талантлив web developer с широки познания в технологиите, и по - точно Front-End. Впечатлих се от знанията му, докато го интервюирах. Той ще бъде отлично допълнение за всяка софтуерна компания.",
     "demoBlog.testimonialAuthor": "Димитър Бонев",
     // footer
     "footer.thanks": "Благодаря за скролването, ",
     "footer.folks": "това е всичко приятели!",
-
   },
 } as const;
