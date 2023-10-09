@@ -1,12 +1,9 @@
 import Typography from "./Typography";
 import layout, { style } from "../../constants/style";
 import type { Project } from "../../constants/constants";
+import { motion } from "framer-motion";
 
-const ProjectCardHeader = ({
-  projectName,
-  projectType,
-  projectStack,
-}: Project) => (
+const ProjectCardHeader = ({ projectName, projectType, projectStack }: Project) => (
   <div>
     <div className="flex flex-wrap gap-2 justify-between items-center mb-4">
       <Typography variant="h2" className="!font-normal !m-0">
@@ -30,13 +27,9 @@ const ProjectCardHeader = ({
   </div>
 );
 
-const ProjectCardBody = ({
-  projectPhotos,
-}: {
-  projectPhotos?: ImageMetadata[];
-}) => {
+const ProjectCardBody = ({ projectPhotos }: { projectPhotos?: ImageMetadata[] }) => {
   return (
-    <>
+    <div>
       <ul className="absolute flex gap-2 list-none opacity-0 group-hover:opacity-100 transition">
         <li>
           <a
@@ -58,9 +51,8 @@ const ProjectCardBody = ({
       <div className="absolute w-[150%] left-1/4 opacity-80 group-hover:opacity-100 group-hover:translate-x-[30px]  transition-all duration-700 -rotate-6  flex gap-4 justify-between mt-4">
         {projectPhotos &&
           projectPhotos.map((photo, i) => (
-            <div className="w-1/2">
+            <div key={i} className="w-1/2">
               <img
-                key={i}
                 src={photo.src}
                 alt="project"
                 className="z-0 w-full h-auto object-fit grayscale group-hover:grayscale-0 transition-all duration-700"
@@ -68,7 +60,7 @@ const ProjectCardBody = ({
             </div>
           ))}
       </div>
-    </>
+    </div>
   );
 };
 
@@ -80,7 +72,11 @@ const ProjectCard = ({
   projectStack,
 }: Project) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 70 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      viewport={{ once: true }}
       className={`${layout.section.light} group overflow-hidden relative h-[450px] md:h-[580px] group !p-12`}
     >
       <ProjectCardHeader
@@ -89,7 +85,7 @@ const ProjectCard = ({
         projectStack={projectStack}
       />
       <ProjectCardBody projectPhotos={projectPhotos} />
-    </div>
+    </motion.div>
   );
 };
 

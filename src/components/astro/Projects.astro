@@ -8,42 +8,30 @@ import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const iconNames = [
+  "devicon-react-original",
+  "devicon-angularjs-plain",
+  "devicon-tailwindcss-plain",
+  "devicon-sass-original",
+  "devicon-nodejs-plain",
+  "devicon-mongodb-plain",
+];
 ---
 
 <section id="portfolio" class=`${layout.section.dark}`>
   <div class=`${layout.maxWidth}`>
     <div class="justify-center flex flex-wrap gap-4 md:gap-12 mb-24">
-      <i
-        class=`${style.textSecondary} devicon-react-original text-4xl md:text-6xl`
-      ></i>
-
-      <i
-        class=`${style.textSecondary} devicon-angularjs-plain text-4xl md:text-6xl`
-      ></i>
-
-      <i
-        class=`${style.textSecondary} devicon-tailwindcss-plain text-4xl md:text-6xl`
-      ></i>
-
-      <i
-        class=`${style.textSecondary} devicon-sass-original text-4xl md:text-6xl`
-      ></i>
-
-      <i
-        class=`${style.textSecondary} devicon-nodejs-plain text-4xl md:text-6xl`
-      ></i>
-
-      <i
-        class=`${style.textSecondary} devicon-mongodb-plain text-4xl md:text-6xl`
-      ></i>
+      {iconNames.map((name) => <i class={`${style.textSecondary} ${name} text-4xl md:text-6xl`} />)}
     </div>
     <Typography variant="span">- {t("projects.sectionTitle")}</Typography>
-
     <div class="flex flex-col md:flex-row gap-24 md:gap-32">
       <div class="flex w-full md:w-1/2 flex-col gap-24">
         <div class="max-w-[40ch]">
           <Typography variant="h2">
-            {t("projects.subtitle")} <br /> {t("projects.subtitle2")}
+            {t("projects.subtitle")}
+            <br />
+            {t("projects.subtitle2")}
           </Typography>
           <Typography>
             {t("projects.text")}
@@ -54,11 +42,15 @@ const t = useTranslations(lang);
             class="underline underline-offset-4 text-cyan-600">{t("projects.cta")}</a
           >
         </div>
-        <ProjectCard {...projectData[0]} />
+        <Typography className="md:order-last">
+          Please be aware that some of the projects use free hosting plan, so you might need to wait
+          for the data to be loaded. <span class="text-red-500">*</span>
+        </Typography>
+        <ProjectCard {...projectData[0]} client:only />
       </div>
       <div class="flex w-full md:w-1/2 flex-col gap-24 lg:gap-32">
-        <ProjectCard {...projectData[0]} />
-        <ProjectCard {...projectData[0]} />
+        <ProjectCard {...projectData[1]} client:only />
+        <ProjectCard {...projectData[2]} client:only />
       </div>
     </div>
   </div>
