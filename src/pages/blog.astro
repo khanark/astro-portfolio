@@ -1,11 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import layout, { style } from "../constants/style";
+import layout from "../constants/style";
 import avatarPhoto from "../assets/Bobby.jpg";
 import Typography from "../components/react/Typography";
+import BlogLayout from "../layouts/BlogLayout.astro";
+
+const posts = await Astro.glob("./blog/*.md");
+console.log(posts);
 ---
 
-<Layout title="Lavacoder | Blog">
+<BlogLayout title="Lavacoder | Blog">
   <section class=`${layout.section.dark}`>
     <div
       class=`${layout.maxWidth} flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8`
@@ -13,20 +16,15 @@ import Typography from "../components/react/Typography";
       <div
         class="w-2/3 md:w-1/4 h-auto overflow-hidden rounded-full border-[4px] border-gray-400 dark:border-gray-200/40"
       >
-        <img
-          src={avatarPhoto.src}
-          class="object-cover w-full h-full grayscale"
-          alt="Borislav"
-        />
+        <img src={avatarPhoto.src} class="object-cover w-full h-full grayscale" alt="Borislav" />
       </div>
       <div class="w-full text-center md:text-left md:w-1/2">
         <Typography variant="h2" className="!mb-0">Borislav Godumov</Typography>
         <Typography>Fullstack Javascript Developer</Typography>
         <Typography>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate
-          aspernatur corrupti illo nobis, nam ex corporis distinctio nihil
-          mollitia dicta voluptas quasi enim omnis veritatis veniam nemo
-          delectus nulla? Voluptatem?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate aspernatur corrupti
+          illo nobis, nam ex corporis distinctio nihil mollitia dicta voluptas quasi enim omnis
+          veritatis veniam nemo delectus nulla? Voluptatem?
         </Typography>
         <a
           href="#"
@@ -42,24 +40,11 @@ import Typography from "../components/react/Typography";
   </section>
   <div class=`${layout.section.light}`>
     <ul class="flex items-center justify-center flex-col">
-      <li>
-        <a href="./blog/post-1">post-1</a>
-      </li>
-      <li>
-        <a href="./blog/post-2">post-2</a>
-      </li>
-      <li>
-        <a href="./blog/post-3">post-3</a>
-      </li>
-      <li>
-        <a href="./blog/post-4">post-4</a>
-      </li>
-      <li>
-        <a href="./blog/post-5">post-5</a>
-      </li>
-      <li>
-        <a href="./blog/post-6">post-6</a>
-      </li>
+      {
+        posts.map((post) => {
+          console.log(post.frontmatter);
+        })
+      }
     </ul>
   </div>
-</Layout>
+</BlogLayout>
