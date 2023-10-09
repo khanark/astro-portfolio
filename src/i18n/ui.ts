@@ -15,6 +15,7 @@ export const ui = {
     "nav.theme.dark": "Dark",
     "nav.theme.light": "Light",
     "Nav.blogLink": "Blog",
+    "nav.home": "Home",
     // Hero
     "hero.sectionTitle": "Introduction",
     "hero.subtitle": "Software Developer based in Sofia, Bulgaria.",
@@ -23,13 +24,11 @@ export const ui = {
     "hero.cta": "Take a look at my CV",
     // Contact
     "contact.sectionTitle": "Contacts",
-    "contact.leftSubtitle":
-      "Embark on a Journey of Connection and Collaboration.",
+    "contact.leftSubtitle": "Embark on a Journey of Connection and Collaboration.",
     "contact.leftSubtitle2":
       " Feel free to reach out to me for any inquiries or collaboration opportunities. I'm always eager to connect and engage with like-minded individuals.",
     "contact.CTA": "Send me an email",
-    "contact.rightSubtitle":
-      "Programming is the art of turning logic into tangible creations.",
+    "contact.rightSubtitle": "Programming is the art of turning logic into tangible creations.",
     "contact.rightSubtitle2":
       "In a world driven by technology, programming enables us to shape the future through lines of code. It's a creative and logical endeavor that empowers us to transform ideas into reality.",
     "contact.span1": "projects",
@@ -69,6 +68,10 @@ export const ui = {
     // footer
     "footer.thanks": "Thanks for scrooling, ",
     "footer.folks": "that's all folks!",
+    // blog page
+    "blog.author": "Borislav Godumov",
+    "blog.aboutAuthor":
+      "Hello, everyone! Welcome to my corner of the digital universe, where I look forward to diving into the programming world and sharing my thoughts with you. Here, I will unravel the threads of my thinking, weaving insights, discoveries and uncovering challenges that touch on the fascinating side of coding",
   },
   es: {
     // Navigation
@@ -78,6 +81,7 @@ export const ui = {
     "nav.theme.dark": "Oscuro",
     "nav.theme.light": "Claro",
     "Nav.blogLink": "Blog",
+    "nav.home": "Inicio",
     // Hero
     "hero.sectionTitle": "Introducción",
     "hero.subtitle": "Desarrollador de software con sede en Sofía, Bulgaria",
@@ -102,8 +106,7 @@ export const ui = {
     "experience.educationTitle": "Educación",
     "experience.educationSubtitle": "1 año 8 meses",
     "experience.educationText.prose1": "Participé en el ",
-    "experience.educationText.link":
-      "programa de SoftUni para desarrolladores web",
+    "experience.educationText.link": "programa de SoftUni para desarrolladores web",
     "experience.educationText.prose2":
       "Tuve la oportunidad de hablar con desarrolladores senior, numerosas discusiones y revisiones de código, así como muchas tareas y problemas diferentes para resolver.",
     "experience.educationCTA": "Enlace a mis ",
@@ -132,6 +135,10 @@ export const ui = {
     // footer
     "footer.thanks": "Gracias por desplazarte, ",
     "footer.folks": "eso es todo amigos!",
+    // blog page
+    "blog.author": "Borislav Godumov",
+    "blog.aboutAuthor":
+      "¡Hola a todos! Bienvenidos a mi rincón del universo digital, donde espero sumergirme en el mundo de la programación y compartir mis pensamientos con ustedes. Aquí, desentrañaré los hilos de mi pensamiento, tejiendo ideas, descubrimientos y desafíos que tocan el lado fascinante de la codificación.",
   },
   bg: {
     // Navigation
@@ -141,6 +148,7 @@ export const ui = {
     "nav.theme.dark": "Тъмна",
     "nav.theme.light": "Светла",
     "Nav.blogLink": "Блог",
+    "nav.home": "Начало",
     // Hero
     "hero.sectionTitle": "Представяне",
     "hero.subtitle": "Софтуерен разработчик, базиран в София, България",
@@ -149,8 +157,7 @@ export const ui = {
     "hero.cta": "Разгледай моето CV",
     // Contact
     "contact.sectionTitle": "Контакти",
-    "contact.leftSubtitle":
-      "Започнете пътешествие на доверие и сътрудничество.",
+    "contact.leftSubtitle": "Започнете пътешествие на доверие и сътрудничество.",
     "contact.leftSubtitle2":
       "Не се колебайте да се свържете с мен за всякакви въпроси или възможности за сътрудничество. Винаги съм готов да се ангажирам с хора с подобни интереси.",
     "contact.CTA": "Изпрати ми имейл",
@@ -166,8 +173,7 @@ export const ui = {
     "experience.educationTitle": "Образование",
     "experience.educationSubtitle": "1 година 8 месеца",
     "experience.educationText.prose1": "Участвах в ",
-    "experience.educationText.link":
-      "програмата на SoftUni за уеб разработчици",
+    "experience.educationText.link": "програмата на SoftUni за уеб разработчици",
     "experience.educationText.prose2":
       "Имах възможността да разговарям с опитни разработчици, множество дискусии и прегледи на код, както и много различни задачи и проблеми за решаване.",
     "experience.educationCTA": "Линк към моите ",
@@ -196,5 +202,9 @@ export const ui = {
     // footer
     "footer.thanks": "Благодаря за скролването, ",
     "footer.folks": "това е всичко приятели!",
+    // blog page
+    "blog.author": "Борислав Годумов",
+    "blog.aboutAuthor":
+      "Здравейте, всички! Добре дошли в моя ъгъл на цифровата вселена, където се надявам да се потопя в света на програмирането и да споделя мислите си с вас. Тук ще разплета нишките, като размишлявам върху идеи, открития и разкривам нови предизвикателства, които докосват невероятната страна на програмирането.",
   },
 } as const;
