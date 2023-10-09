@@ -1,31 +1,30 @@
-import {
-  faMoon,
-  faSun,
-  faEllipsisH,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
-import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
-import YummiDesktop from "../assets/yummi_photos/yummiDesktop.png"
-import YummiMobile from "../assets/yummi_photos/YummiMobile.png"
-
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import YummiDesktop from "../assets/yummi_photos/yummiDesktop.png";
+import YummiMobile from "../assets/yummi_photos/YummiMobile.png";
+import LavacoderDesktop from "../assets/lavacoder_photos/lavacoderDesktop.png";
+import LavacoderMobile from "../assets/lavacoder_photos/lavacoderMobile.png";
+import danceguideDesktop from "../assets/danceguide_photos/danceguideDesktop.png";
+import danceguideMobile from "../assets/danceguide_photos/danceguideMobile.png";
 interface IconMap {
   [key: string]: IconDefinition;
 }
 
-type Icon = string;
-
 export type SocialLink = {
   link: string;
-  iconName: Icon;
+  iconName: string;
 };
 
 export type NavLink = {
-  id: string;
-  text: string;
-  iconName: Icon;
+  id?: string;
+  text?: string;
+  iconName: string;
   toggleDropDownMenu?: () => void;
   translate?: (id: string) => void;
-};
+  type?: string;
+  path?: string;
+} & ({ type: string; path: string } | { type?: never; path?: string });
 
 export interface Project {
   projectName: string;
@@ -80,14 +79,16 @@ export const projectData: ProjectData = [
   },
   {
     projectName: "Lavacoder",
-    projectType: ["portfolio"],
+    projectType: ["portfolio", "blog"],
     projectLink: "https://lavacoder.netlify.app/",
     projectStack: ["Astro", "React", "TypeScript", "TailwindCSS"],
+    projectPhotos: [LavacoderDesktop, LavacoderMobile],
   },
   {
     projectName: "DanceGuide",
     projectType: ["community", "dancing"],
     projectLink: "https://danceguide.netlify.app/",
     projectStack: ["React", "JavaScript", "CSS/SCSS"],
+    projectPhotos: [danceguideDesktop, danceguideMobile], // TODO: fix the desktop photo
   },
 ];
