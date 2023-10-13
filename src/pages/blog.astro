@@ -3,48 +3,54 @@ import layout from "../constants/style";
 import avatarPhoto from "../assets/Bobby.jpg";
 import Typography from "../components/react/Typography";
 import BlogLayout from "../layouts/BlogLayout.astro";
+import BlogCard from "../components/astro/BlogCard.astro";
 
 const posts = await Astro.glob("./blog/*.md");
 console.log(posts);
 ---
 
 <BlogLayout title="Lavacoder | Blog">
-  <section class=`${layout.section.dark}`>
-    <div
-      class=`${layout.maxWidth} flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8`
-    >
-      <div
-        class="w-2/3 md:w-1/4 h-auto overflow-hidden rounded-full border-[4px] border-gray-400 dark:border-gray-200/40"
-      >
-        <img src={avatarPhoto.src} class="object-cover w-full h-full grayscale" alt="Borislav" />
-      </div>
-      <div class="w-full text-center md:text-left md:w-1/2">
-        <Typography variant="h2" className="!mb-0">Borislav Godumov</Typography>
-        <Typography>Fullstack Javascript Developer</Typography>
-        <Typography>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate aspernatur corrupti
-          illo nobis, nam ex corporis distinctio nihil mollitia dicta voluptas quasi enim omnis
-          veritatis veniam nemo delectus nulla? Voluptatem?
-        </Typography>
-        <a
-          href="#"
-          class="flex items-center hover:gap-8 transition-all duration-300 gap-2 text-lg text-cyan-600 underline underline-offset-4"
+    <section class=`${layout.section.dark}`>
+        <div
+            class=`${layout.maxWidth} flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8`
         >
-          <p>
-            Connect with me on <span class="font-bold">LinkedIn</span>
-          </p>
-          <i class="fa-solid fa-arrow-right text-lg"></i>
-        </a>
-      </div>
+            <div
+                class="w-2/3 md:w-1/4 h-auto overflow-hidden rounded-full border-[4px] border-gray-400 dark:border-gray-200/40"
+            >
+                <img
+                    src={avatarPhoto.src}
+                    class="object-cover w-full h-full grayscale"
+                    alt="Borislav"
+                />
+            </div>
+            <div class="w-full text-center md:text-left md:w-1/2">
+                <Typography variant="h2" className="!mb-0">Borislav Godumov</Typography>
+                <Typography>Fullstack Javascript Developer</Typography>
+                <Typography>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate aspernatur
+                    corrupti illo nobis, nam ex corporis distinctio nihil mollitia dicta voluptas
+                    quasi enim omnis veritatis veniam nemo delectus nulla? Voluptatem?
+                </Typography>
+                <a
+                    href="https://www.linkedin.com/in/borislav-godumov-7245b61a2/"
+                    target="_blank"
+                    class="flex items-center hover:gap-8 transition-all duration-300 gap-2 text-lg text-cyan-600 underline underline-offset-4"
+                >
+                    <p>
+                        Connect with me on <span class="font-bold">LinkedIn</span>
+                    </p>
+                    <i class="fa-solid fa-arrow-right text-lg"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class=`${layout.section.light}`>
+        <ul class="flex items-center justify-center flex-col">
+            {
+                posts.map((post) => {
+                    <BlogCard {...post.frontmatter} />;
+                })
+            }
+        </ul>
     </div>
-  </section>
-  <div class=`${layout.section.light}`>
-    <ul class="flex items-center justify-center flex-col">
-      {
-        posts.map((post) => {
-          console.log(post.frontmatter);
-        })
-      }
-    </ul>
-  </div>
 </BlogLayout>

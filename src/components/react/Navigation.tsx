@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import layout, { style } from "../../constants/style";
 import { pageContent } from "../../constants/constants";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import ThemeSwitchButton from "./ThemeSwitchButton";
 import LinkWithIcon from "./LinkWithIcon";
 import LanguageOptions from "./LanguageOptions";

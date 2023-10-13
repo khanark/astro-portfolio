@@ -9,52 +9,49 @@ const t = useTranslations(lang);
 ---
 
 <section class=`${layout.section.light}` id="experience">
-  <Typography variant="span" className="!text-center !mb-16">
-    {t("experience.sectionTitle")}
-  </Typography>
-  <div
-    class=`${layout.maxWidthSecondary} flex flex-col sm:flex-row justify-between gap-12`
-  >
-    <div class="max-w-[65ch]">
-      <Typography variant="h2" className="!mb-0">
-        {t("experience.educationTitle")}
-      </Typography>
-      <p class=`${style.textSecondary} mb-8`>
-        {t("experience.educationSubtitle")}
-      </p>
-      <Typography>
-        {t("experience.educationText.prose1")}
-        <a class="font-bold underline text-cyan-600 underline-offset-4">
-          {t("experience.educationText.link")}</a
-        >. {t("experience.educationText.prose2")}
-      </Typography>
-      <a
-        href="https://github.com/khanark/SoftUni"
-        target="_blank"
-        class="text-cyan-600 underline underline-offset-4"
-        >{t("experience.educationCTA")}
-        <span class="font-bold text-lg">{t("experience.educationCTAbold")}</span
-        >.</a
-      >
+    <Typography variant="span" className="!text-center !mb-16">
+        {t("experience.sectionTitle")}
+    </Typography>
+    <div class=`${layout.maxWidthSecondary} flex flex-col sm:flex-row justify-between gap-12`>
+        <div class="max-w-[65ch]">
+            <Typography variant="h2" className="!mb-0">
+                {t("experience.educationTitle")}
+            </Typography>
+            <p class=`${style.textSecondary} mb-8`>
+                {t("experience.educationSubtitle")}
+            </p>
+            <Typography>
+                {t("experience.educationText.prose1")}
+                <a class="font-bold underline text-cyan-600 underline-offset-4">
+                    {t("experience.educationText.link")}</a
+                >. {t("experience.educationText.prose2")}
+            </Typography>
+            <a
+                href="https://github.com/khanark/SoftUni"
+                target="_blank"
+                class="text-cyan-600 underline underline-offset-4"
+                >{t("experience.educationCTA")}
+                <span class="font-bold text-lg">{t("experience.educationCTAbold")}</span>.</a
+            >
+        </div>
+        <div class="max-w-[65ch]">
+            <Typography variant="h2" className="!mb-0">
+                {t("experience.freelanceTitle")}
+            </Typography>
+            <p class=`${style.textSecondary} mb-8`>
+                {t("experience.freelanceSubtitle")}
+            </p>
+            <Typography>
+                {t("experience.freelanceText")}
+            </Typography>
+            <a
+                href="https://www.linkedin.com/in/borislav-godumov-7245b61a2/"
+                target="_blank"
+                class="text-cyan-600 underline underline-offset-4"
+                >{t("experience.freelanceCTA")}<span class="font-bold text-lg"
+                    >{t("experience.freelanceCTAbold")}</span
+                >.</a
+            >
+        </div>
     </div>
-    <div class="max-w-[65ch]">
-      <Typography variant="h2" className="!mb-0">
-        {t("experience.freelanceTitle")}
-      </Typography>
-      <p class=`${style.textSecondary} mb-8`>
-        {t("experience.freelanceSubtitle")}
-      </p>
-      <Typography>
-        {t("experience.freelanceText")}
-      </Typography>
-      <a
-        href="https://www.linkedin.com/in/borislav-godumov-7245b61a2/"
-        target="_blank"
-        class="text-cyan-600 underline underline-offset-4"
-        >{t("experience.freelanceCTA")}<span class="font-bold text-lg"
-          >{t("experience.freelanceCTAbold")}</span
-        >.</a
-      >
-    </div>
-  </div>
 </section>

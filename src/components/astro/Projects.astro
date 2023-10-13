@@ -10,48 +10,52 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const iconNames = [
-  "devicon-react-original",
-  "devicon-angularjs-plain",
-  "devicon-tailwindcss-plain",
-  "devicon-sass-original",
-  "devicon-nodejs-plain",
-  "devicon-mongodb-plain",
+    "devicon-react-original",
+    "devicon-angularjs-plain",
+    "devicon-tailwindcss-plain",
+    "devicon-sass-original",
+    "devicon-nodejs-plain",
+    "devicon-mongodb-plain",
 ];
 ---
 
 <section id="portfolio" class=`${layout.section.dark}`>
-  <div class=`${layout.maxWidth}`>
-    <div class="justify-center flex flex-wrap gap-4 md:gap-12 mb-24">
-      {iconNames.map((name) => <i class={`${style.textSecondary} ${name} text-4xl md:text-6xl`} />)}
-    </div>
-    <Typography variant="span">- {t("projects.sectionTitle")}</Typography>
-    <div class="flex flex-col md:flex-row gap-24 md:gap-32">
-      <div class="flex w-full md:w-1/2 flex-col gap-24">
-        <div class="max-w-[40ch]">
-          <Typography variant="h2">
-            {t("projects.subtitle")}
-            <br />
-            {t("projects.subtitle2")}
-          </Typography>
-          <Typography>
-            {t("projects.text")}
-          </Typography>
-          <a
-            href="https://github.com/khanark"
-            target="_blank"
-            class="underline underline-offset-4 text-cyan-600">{t("projects.cta")}</a
-          >
+    <div class=`${layout.maxWidth}`>
+        <div class="justify-center flex flex-wrap gap-4 md:gap-12 mb-24">
+            {
+                iconNames.map((name) => (
+                    <i class={`${style.textSecondary} ${name} text-4xl md:text-6xl`} />
+                ))
+            }
         </div>
-        <Typography className="md:order-last">
-          Please be aware that some of the projects use free hosting plan, so you might need to wait
-          for the data to be loaded. <span class="text-red-500">*</span>
-        </Typography>
-        <ProjectCard {...projectData[0]} client:only />
-      </div>
-      <div class="flex w-full md:w-1/2 flex-col gap-24 lg:gap-32">
-        <ProjectCard {...projectData[1]} client:only />
-        <ProjectCard {...projectData[2]} client:only />
-      </div>
+        <Typography variant="span">- {t("projects.sectionTitle")}</Typography>
+        <div class="flex flex-col md:flex-row gap-24 md:gap-32">
+            <div class="flex w-full md:w-1/2 flex-col gap-24">
+                <div class="max-w-[40ch]">
+                    <Typography variant="h2">
+                        {t("projects.subtitle")}
+                        <br />
+                        {t("projects.subtitle2")}
+                    </Typography>
+                    <Typography>
+                        {t("projects.text")}
+                    </Typography>
+                    <a
+                        href="https://github.com/khanark"
+                        target="_blank"
+                        class="underline underline-offset-4 text-cyan-600">{t("projects.cta")}</a
+                    >
+                </div>
+                <Typography className="md:order-last">
+                    Please be aware that some of the projects use free hosting plan, so you might
+                    need to wait for the data to be loaded. <span class="text-red-500">*</span>
+                </Typography>
+                <ProjectCard {...projectData[0]} client:only />
+            </div>
+            <div class="flex w-full md:w-1/2 flex-col gap-24 lg:gap-32">
+                <ProjectCard {...projectData[1]} client:only />
+                <ProjectCard {...projectData[2]} client:only />
+            </div>
+        </div>
     </div>
-  </div>
 </section>

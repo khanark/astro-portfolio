@@ -1,12 +1,9 @@
 ---
-
+layout: "../../layouts/BlogPostLayout.astro"
 title: Why is this CSS so weird?
 date: 2022-12-09
 author: Anna Dixon
-image: {
-  src: "/images/post-4.jpg",
-  alt: "A picture of a coder",
-}
+image: { src: "/images/post-4.jpg", alt: "A picture of a coder" }
 description: The global css file for this site is a bit different than I’d write things normally, but I’m trying to keep you from having to write a bunch of random classes.
 draft: false
 category: CSS
@@ -24,9 +21,9 @@ Officia tempor voluptate enim consequat cillum aute fugiat cupidatat incididunt 
 
 Ipsum adipisicing exercitation dolor pariatur labore qui. Culpa cupidatat ea elit eiusmod tempor ea qui dolor Lorem laborum adipisicing. Ad ea laboris qui cupidatat deserunt culpa.
 
-- Nulla ex velit adipisicing
-- proident fugiat deserunt sunt
-- eu adipisicing sint incididunt quis qui.
+-   Nulla ex velit adipisicing
+-   proident fugiat deserunt sunt
+-   eu adipisicing sint incididunt quis qui.
 
 Nulla fugiat labore duis ullamco reprehenderit excepteur laboris tempor ullamco aliquip laborum aliqua. Est tempor nisi magna ut elit pariatur commodo.
 
