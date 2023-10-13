@@ -13,6 +13,10 @@ const posts = await Astro.glob("../blog/*.md");
 ---
 
 <BlogLayout title="Lavacoder | Blog">
+    <div class="bg-red-100 text-center py-2">
+        <h2 class="text-orange-700 text-lg">This side of the moon is still dark!</h2>
+        <p class="text-orange-500 text-sm underline">The blog page is under construction</p>
+    </div>
     <section class=`${layout.section.dark}`>
         <div
             class=`${layout.maxWidth} flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8`
