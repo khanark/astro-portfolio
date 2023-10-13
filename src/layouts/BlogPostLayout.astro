@@ -1,18 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import Typography from "../components/react/Typography";
-import layout, { style } from "../constants/style";
+import layout from "../constants/style";
 import { formatDate } from "../utils/utils";
 import BlogLayout from "./BlogLayout.astro";
 const { frontmatter } = Astro.props;
 const { title, date, category, author, image } = frontmatter;
-console.log(image);
-console.log("Hello world");
 ---
 
 <BlogLayout {title}>
     <section class=`${layout.section.dark}`>
-        <div class=`${layout.maxWidthSecondary}`>
+        <div class="max-w-2xl mx-auto">
             <header class="text-center">
                 <a
                     href=`/blog/category/${category.toLowerCase()}`

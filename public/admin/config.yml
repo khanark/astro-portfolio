@@ -25,11 +25,11 @@ collections:
           - { label: "Draft", name: "draft", widget: "boolean" }
           - { label: "Description", name: "description", widget: "string" }
           - label: "Featured Image"
-  name: "image"
-  widget: "object"
-  fields:
-    - { label: "Image Source", name: "src", widget: "image" }
-    - { label: "Image Alt Text", name: "alt", widget: "string" }
+            name: "image"
+            widget: "object"
+            fields:
+                - { label: "Image Source", name: "src", widget: "image" }
+                - { label: "Image Alt Text", name: "alt", widget: "string" }
 
           - { label: "Category", name: "category", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }

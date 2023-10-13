@@ -1,6 +1,13 @@
 ---
-const post = Astro.props;
-console.log(post);
+import layout from "../../constants/style";
+const { post } = Astro.props;
+const { title, date, category } = post;
 ---
 
-<h1>Hello this is the post card</h1>
+<li class=`${layout.section.dark}`>
+    <a href=`${post.url}`>
+        <h3 class=`${layout.heading}`>${title}</h3>
+        <p class=`${layout.text}`>${date}</p>
+        <p class=`${layout.text}`>${category}</p>
+    </a>
+</li>

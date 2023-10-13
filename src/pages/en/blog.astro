@@ -5,6 +5,7 @@ import Typography from "../../components/react/Typography";
 
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogCard from "../../components/astro/BlogCard.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -53,7 +54,7 @@ const posts = await Astro.glob("../blog/*.md");
         <ul class="flex items-center justify-center flex-col">
             {
                 posts.map((post) => {
-                    console.log(post.frontmatter);
+                    return <BlogCard post={post} />;
                 })
             }
         </ul>

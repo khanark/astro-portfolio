@@ -1,15 +1,21 @@
 ---
-import layout from "../../constants/style";
+import layout, { style } from "../../constants/style";
 import avatarPhoto from "../../assets/Bobby.jpg";
 import Typography from "../../components/react/Typography";
 
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogCard from "../../components/astro/BlogCard.astro";
+import { Image } from "astro:assets";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const posts = await Astro.glob("../blog/*.md");
+// sort the post by date usign the frontmatter
+const sortedPosts = posts.sort((a, b) => {
+    return b.frontmatter.date.localeCompare(a.frontmatter.date);
+});
 ---
 
 <BlogLayout title="Lavacoder | Blog">
@@ -50,12 +56,31 @@ const posts = await Astro.glob("../blog/*.md");
         </div>
     </section>
     <div class=`${layout.section.light}`>
-        <ul class="flex items-center justify-center flex-col">
-            {
-                posts.map((post) => {
-                    console.log(post.frontmatter);
-                })
-            }
-        </ul>
+        <div class=`${layout.maxWidthSecondary}`>
+            <ul class="grid responsive-grid">
+                {
+                    sortedPosts.map((post) => {
+                        return (
+                            <li class=`${layout.section.dark} !p-4 rounded`>
+                                <a
+                                    href={`/category/${post.frontmatter.category}`}
+                                    class="text-cyan-600 text-xs uppercase font-bold border border-cyan-600 rounded-full px-2 py-1 mb-2 inline-block"
+                                >
+                                    {post.frontmatter.category}
+                                </a>
+                                <Image
+                                    width={400}
+                                    height={200}
+                                    quality={80}
+                                    src={post.frontmatter.image.src}
+                                    alt={post.frontmatter.image.alt}
+                                    class=""
+                                />
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+        </div>
     </div>
 </BlogLayout>
