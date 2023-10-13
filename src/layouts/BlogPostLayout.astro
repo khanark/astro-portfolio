@@ -5,7 +5,9 @@ import layout, { style } from "../constants/style";
 import { formatDate } from "../utils/utils";
 import BlogLayout from "./BlogLayout.astro";
 const { frontmatter } = Astro.props;
-const { title, description, date, category, author, image } = frontmatter;
+const { title, date, category, author, image } = frontmatter;
+console.log(image);
+console.log("Hello world");
 ---
 
 <BlogLayout {title}>
