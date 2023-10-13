@@ -18,7 +18,7 @@ collections:
                 label: "Layout",
                 name: "layout",
                 widget: "hidden",
-                default: "../../src/layouts/BlogPostLayout.astro",
+                default: "src/layouts/BlogPostLayout.astro",
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Publish Date", name: "date", widget: "datetime" }
