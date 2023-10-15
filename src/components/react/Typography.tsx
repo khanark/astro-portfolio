@@ -18,8 +18,14 @@ const PrimaryHeading = ({ children, classes }: { classes?: string; children: Rea
     );
 };
 
-const SecondaryHeading = ({ children }: { children: React.ReactNode }) => {
-    return <h3 className={`${style.textPrimary} text-2xl mb-8`}>{children}</h3>;
+const SecondaryHeading = ({
+    children,
+    classes,
+}: {
+    children: React.ReactNode;
+    classes: string;
+}) => {
+    return <h3 className={`${style.textPrimary} text-2xl mb-8 ${classes}`}>{children}</h3>;
 };
 
 const Paragraph = ({ children, classes }: { classes?: string; children: React.ReactNode }) => {
