@@ -55,7 +55,7 @@ const ProjectCardBody = ({ projectPhotos }: { projectPhotos?: ImageMetadata[] })
                             <img
                                 src={photo.src}
                                 alt="project"
-                                className="z-0 w-full h-auto object-fit grayscale group-hover:grayscale-0 transition-all duration-700"
+                                className="z-0 w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                             />
                         </div>
                     ))}
@@ -67,11 +67,11 @@ const ProjectCardBody = ({ projectPhotos }: { projectPhotos?: ImageMetadata[] })
 const ProjectCard = ({ projectName, projectType, projectPhotos, projectStack }: Project) => {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 70 }}
+            initial={{ opacity: 0, y: 75 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
             viewport={{ once: true }}
-            className={`${layout.section.light} group overflow-hidden relative h-[450px] md:h-[580px] group !p-12`}
+            className={`${layout.section.light} group relative overflow-hidden rounded drop-shadow-md h-[450px] md:h-[580px] group !p-12`}
         >
             <ProjectCardHeader
                 projectName={projectName}

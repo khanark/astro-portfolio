@@ -65,7 +65,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
                             text={theme === "dark" ? t("nav.theme.dark") : t("nav.theme.light")}
                         />
                     </div>
-                    <LanguageOptions borderless={true} lang={lang} endpoint="/blog" />
+                    {/* <LanguageOptions borderless={true} lang={lang} endpoint="/blog" /> */}
                 </div>
                 <ul className={`${style.textSecondary}`}>
                     <LinkWithIcon

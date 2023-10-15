@@ -30,7 +30,7 @@ const lang = getLangFromUrl(Astro.url);
         />
         <meta name="generator" content={Astro.generator} />
         <!-- identity script netlify cms integration -->
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <title>{title}</title>
         <ViewTransitions />
     </head>

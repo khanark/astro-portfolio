@@ -1,0 +1,39 @@
+---
+import layout from "../../constants/style";
+import Typography from "../react/Typography";
+import { formatDate } from "../../utils/utils";
+import Image from "astro/components/Image.astro";
+const { frontmatter, url } = Astro.props;
+const { title, date, category, image, description, author } = frontmatter;
+---
+
+<li class=`${layout.section.dark} !p-0 rounded group shadow-md`>
+    <div class="px-4 py-2">
+        <a
+            href={`/category/${category}`}
+            class="text-cyan-600 text-xs uppercase font-bold border border-cyan-600 rounded-full px-2 py-1 inline-block"
+        >
+            {category}
+        </a>
+    </div>
+    <Image width={400} height={200} quality={80} src={image.src} alt={image.alt} />
+    <div class="p-4">
+        <div>
+            <Typography variant="h3" className="!mb-1 line-clamp-2">
+                {title}
+            </Typography>
+            <Typography className="!mb-3">
+                by <span class="font-bold">{author}</span> on {formatDate(date)}
+            </Typography>
+            <Typography className="font-bold !mb-4 line-clamp-2">
+                {description}
+            </Typography>
+        </div>
+
+        <a
+            href={`${url}`}
+            class="inline-block px-3 py-1 font-semibold rounded bg-cyan-800 text-white w-fit mt-auto group-hover:bg-cyan-600 transition duration-300"
+            >Read More</a
+        >
+    </div>
+</li>

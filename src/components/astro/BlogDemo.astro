@@ -35,12 +35,12 @@ import { formatDate } from "../../utils/utils";
         {lastThreePosts.map((post) => {
           return (
             <motion.li
-            initial={{opacity:0, x:-50}}
+            initial={{opacity:0, x:-75}}
             whileInView={{opacity:1, x:0}}
-            transition={{duration:0.5}}
+            transition={{duration:0.5, delay: 0.25}}
             viewport={{once:true}}
             whileHover={{scale:1.05}}
-            client:load
+            client:visible
             >
              <a
              href={`${post.url}`}

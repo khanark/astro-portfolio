@@ -1,24 +1,46 @@
 ---
-import layout, { style } from "../../constants/style";
-import avatarPhoto from "../../assets/Bobby.jpg";
+import type { GetStaticPaths } from "astro";
 import Typography from "../../components/react/Typography";
-
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import BlogLayout from "../../layouts/BlogLayout.astro";
-import BlogCard from "../../components/astro/BlogCard.astro";
-import { Image } from "astro:assets";
+import layout from "../../constants/style";
+import avatarPhoto from "../../assets/Bobby.jpg";
+import PostCard from "../../components/astro/PostCard.astro";
 
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+// those are all the possible paths
+export const getStaticPaths = (() => {
+    return [
+        {
+            params: { category: "Reference Docs" },
+            props: { name: "Reference Docs" },
+        },
+        {
+            params: { category: "General" },
+            props: { name: "General" },
+        },
+        {
+            params: { category: "CSS" },
+            props: { name: "CSS" },
+        },
+        {
+            params: { category: "Astro" },
+            props: { name: "Astro" },
+        },
+    ];
+}) satisfies GetStaticPaths;
+
+const { category } = Astro.params;
+const { name } = Astro.props;
 
 const posts = await Astro.glob("../blog/*.md");
-// sort the post by date usign the frontmatter
-const sortedPosts = posts.sort((a, b) => {
+
+let sortedPosts = posts.sort((a, b) => {
     return b.frontmatter.date.localeCompare(a.frontmatter.date);
 });
+
+sortedPosts = sortedPosts.filter((post) => post.frontmatter.category === category);
 ---
 
-<BlogLayout title="Lavacoder | Blog">
+<BlogLayout title={name}>
     <div class="bg-red-100 text-center py-2">
         <h2 class="text-orange-700 text-lg">This side of the moon is still dark!</h2>
         <p class="text-orange-500 text-sm underline">The blog page is under construction</p>
@@ -28,7 +50,7 @@ const sortedPosts = posts.sort((a, b) => {
             class=`${layout.maxWidth} flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8`
         >
             <div
-                class="w-2/3 md:w-1/4 h-auto overflow-hidden rounded-full border-[4px] border-gray-400 dark:border-gray-200/40"
+                class="w-2/3 sm:w-2/4 md:w-1/3 h-auto overflow-hidden rounded-full border-[4px] border-gray-400 dark:border-gray-200/40"
             >
                 <img
                     src={avatarPhoto.src}
@@ -37,10 +59,11 @@ const sortedPosts = posts.sort((a, b) => {
                 />
             </div>
             <div class="w-full text-center md:text-left md:w-1/2">
-                <Typography variant="h2" className="!mb-0">{t("blog.author")}</Typography>
+                <Typography variant="h2" className="!mb-0">Borislav Goumov</Typography>
                 <Typography>Fullstack Javascript Developer</Typography>
                 <Typography>
-                    {t("blog.aboutAuthor")}
+                    I am a fullstack javascript developer with a passion for web development. I love
+                    to learn new things and I am always looking for new challenges.
                 </Typography>
                 <a
                     href="https://www.linkedin.com/in/borislav-godumov-7245b61a2/"
@@ -59,26 +82,9 @@ const sortedPosts = posts.sort((a, b) => {
         <div class=`${layout.maxWidthSecondary}`>
             <ul class="grid responsive-grid">
                 {
-                    sortedPosts.map((post) => {
-                        return (
-                            <li class=`${layout.section.dark} !p-4 rounded`>
-                                <a
-                                    href={`/category/${post.frontmatter.category}`}
-                                    class="text-cyan-600 text-xs uppercase font-bold border border-cyan-600 rounded-full px-2 py-1 mb-2 inline-block"
-                                >
-                                    {post.frontmatter.category}
-                                </a>
-                                <Image
-                                    width={400}
-                                    height={200}
-                                    quality={80}
-                                    src={post.frontmatter.image.src}
-                                    alt={post.frontmatter.image.alt}
-                                    class=""
-                                />
-                            </li>
-                        );
-                    })
+                    sortedPosts.map((post: any) => (
+                        <PostCard frontmatter={post.frontmatter} url={post.url} />
+                    ))
                 }
             </ul>
         </div>
