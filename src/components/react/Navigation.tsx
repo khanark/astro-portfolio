@@ -54,7 +54,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
         >
             <nav className={`${layout.maxWidth} flex items-center justify-between px-4 h-16`}>
                 <div className="flex items-center gap-4">
-                    <a href={`/${lang}`}>
+                    <a href="/">
                         <h3 className={`${style.textPrimary} text-2xl font-semibold leading-[2]`}>
                             Lavacoder
                             <span className="ml-1 inline-block animate-bounce text-4xl text-cyan-500">
