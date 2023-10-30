@@ -3,9 +3,15 @@ import { style } from "../../constants/style";
 
 const ThemeSwitchButton = () => {
     const [theme, setTheme] = useState(localStorage.getItem("theme") ?? "light");
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     const handleClick = () => {
         setTheme(theme === "light" ? "dark" : "light");
+        setIsMounted(false);
     };
 
     useEffect(() => {
@@ -24,7 +30,7 @@ const ThemeSwitchButton = () => {
         >
             <i className={`fa-solid ${theme === "dark" ? "fa-sun" : "fa-moon"}`}></i>
             <span className={`${style.textSecondary} text-sm`}>
-                {theme === "dark" ? "Dark" : "Light"}
+                {theme === "dark" && isMounted ? "Dark" : "Light"}
             </span>
         </button>
     );

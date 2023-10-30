@@ -54,16 +54,18 @@ export function formarBlogPosts(posts: any[], formatOptios: any | undefined): an
 export const observeElements = (htmlCollection: any, animation: string) => {
     console.log(htmlCollection);
 
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add(animation);
-                }
-            });
-        },
-        { threshold: 0.5 }
-    );
+    [...htmlCollection].forEach((element) => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(animation);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
 
-    [...htmlCollection].forEach((element) => observer.observe(element));
+        observer.observe(element);
+    });
 };
