@@ -1,7 +1,6 @@
 import Typography from "./Typography";
 import layout, { style } from "../../constants/style";
 import type { Project } from "../../constants/constants";
-import { motion } from "framer-motion";
 
 const ProjectCardHeader = ({ projectName, projectType, projectStack }: Project) => (
     <div>
@@ -27,7 +26,7 @@ const ProjectCardHeader = ({ projectName, projectType, projectStack }: Project) 
     </div>
 );
 
-const ProjectCardBody = ({ projectPhotos }: { projectPhotos?: ImageMetadata[] }) => {
+const ProjectCardBody = ({ projectPhotos }: { projectPhotos?: string[] }) => {
     return (
         <div>
             <ul className="absolute flex gap-2 list-none opacity-0 group-hover:opacity-100 transition">
@@ -48,16 +47,20 @@ const ProjectCardBody = ({ projectPhotos }: { projectPhotos?: ImageMetadata[] })
                     </a>
                 </li>
             </ul>
-            <div className="absolute w-[150%] left-1/4 opacity-80 group-hover:opacity-100 group-hover:translate-x-[30px]  transition-all duration-700 -rotate-6  flex gap-4 justify-between mt-4">
+            <div className="w-full relative flex gap-4">
                 {projectPhotos &&
                     projectPhotos.map((photo, i) => (
-                        <div key={i} className="w-1/2">
-                            <img
-                                src={photo.src}
-                                alt="project"
-                                className="z-0 w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                            />
-                        </div>
+                        // <div key={i} className="w-full h-[300px]">
+                        //     <img
+                        //         src={`${photo}`}
+                        //         alt="project"
+                        //         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        //     />
+                        // </div>
+                        <div
+                            className="bg-top bg-no-repeat bg-cover w-full h-[300px] grayscale group-hover:grayscale-0 transition-all duration-700"
+                            style={{ backgroundImage: `url(${photo})` }}
+                        ></div>
                     ))}
             </div>
         </div>
@@ -66,12 +69,8 @@ const ProjectCardBody = ({ projectPhotos }: { projectPhotos?: ImageMetadata[] })
 
 const ProjectCard = ({ projectName, projectType, projectPhotos, projectStack }: Project) => {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 75 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            viewport={{ once: true }}
-            className={`${layout.section.light} group relative overflow-hidden rounded drop-shadow-md h-[450px] md:h-[580px] group !p-12`}
+        <div
+            className={`project-card opacity-0 ${layout.section.light}  flex flex-col justify-between group relative overflow-hidden rounded drop-shadow-md h-[450px] md:h-[580px] group !p-12`}
         >
             <ProjectCardHeader
                 projectName={projectName}
@@ -79,7 +78,7 @@ const ProjectCard = ({ projectName, projectType, projectPhotos, projectStack }: 
                 projectStack={projectStack}
             />
             <ProjectCardBody projectPhotos={projectPhotos} />
-        </motion.div>
+        </div>
     );
 };
 

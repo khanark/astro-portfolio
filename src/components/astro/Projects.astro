@@ -52,12 +52,19 @@ const iconNames = [
                     Please be aware that some of the projects use free hosting plan, so you might
                     need to wait for the data to be loaded. <span class="text-red-500">*</span>
                 </Typography>
-                <ProjectCard {...projectData[0]} client:load />
+                <ProjectCard {...projectData[0]} />
             </div>
             <div class="flex w-full md:w-1/2 flex-col gap-16 lg:gap-32">
-                <ProjectCard {...projectData[1]} client:load />
-                <ProjectCard {...projectData[2]} client:load />
+                <ProjectCard {...projectData[1]} />
+                <ProjectCard {...projectData[2]} />
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    import { observeElements } from "../../utils/utils";
+
+    const projectCards = document.getElementsByClassName("project-card");
+    observeElements(projectCards, "animate-fadeIn");
+</script>

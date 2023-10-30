@@ -1,12 +1,7 @@
 import { faMoon, faSun, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import YummiDesktop from "../assets/yummi_photos/yummiDesktop.png";
-import YummiMobile from "../assets/yummi_photos/YummiMobile.png";
-import LavacoderDesktop from "../assets/lavacoder_photos/lavacoderDesktop.png";
-import LavacoderMobile from "../assets/lavacoder_photos/lavacoderMobile.png";
-import danceguideDesktop from "../assets/danceguide_photos/danceguideDesktop.png";
-import danceguideMobile from "../assets/danceguide_photos/danceguideMobile.png";
+
 interface IconMap {
     [key: string]: IconDefinition;
 }
@@ -29,7 +24,7 @@ export type NavLink = {
 export interface Project {
     projectName: string;
     projectType: string[];
-    projectPhotos?: ImageMetadata[];
+    projectPhotos?: string[];
     projectLink?: string;
     projectStack: string[];
 }
@@ -75,20 +70,29 @@ export const projectData: ProjectData = [
         projectType: ["cooking", "product"],
         projectLink: "https://yummibg.netlify.app/",
         projectStack: ["Angular", "TypeScript", "TailwindCSS"],
-        projectPhotos: [YummiDesktop, YummiMobile],
+        projectPhotos: [
+            "https://ik.imagekit.io/9kvf2hm8f/yummibg%20website%20images/tr:w-300/screencapture-yummibg-netlify-app-2023-10-16-18_40_13.jpg?updatedAt=1697474464148",
+            "https://ik.imagekit.io/9kvf2hm8f/yummibg%20website%20images/tr:w-300/screencapture-yummibg-netlify-app-2023-10-16-18_40_31.jpg?updatedAt=1697474461908",
+        ],
     },
     {
         projectName: "Lavacoder",
         projectType: ["portfolio", "blog"],
         projectLink: "https://lavacoder.netlify.app/",
         projectStack: ["Astro", "React", "TypeScript", "TailwindCSS"],
-        projectPhotos: [LavacoderDesktop, LavacoderMobile],
+        projectPhotos: [
+            "https://ik.imagekit.io/9kvf2hm8f/lavacoder%20website%20images/tr:w-300/screencapture-lavacoderv2-netlify-app-2023-10-16-18_13_32.jpg",
+            "https://ik.imagekit.io/9kvf2hm8f/lavacoder%20website%20images/tr:w-300/screencapture-lavacoderv2-netlify-app-2023-10-16-18_14_42.jpg?updatedAt=1697473171385",
+        ],
     },
     {
         projectName: "DanceGuide",
         projectType: ["community", "dancing"],
         projectLink: "https://danceguide.netlify.app/",
         projectStack: ["React", "JavaScript", "CSS/SCSS"],
-        projectPhotos: [danceguideDesktop, danceguideMobile], // TODO: fix the desktop photo
+        projectPhotos: [
+            "https://ik.imagekit.io/9kvf2hm8f/dance%20guide%20website%20images/tr:w-800/screencapture-danceguide-netlify-app-2023-10-16-18_43_42.jpg?updatedAt=1697474701480",
+            "https://ik.imagekit.io/9kvf2hm8f/dance%20guide%20website%20images/tr:w-800/screencapture-danceguide-netlify-app-catalog-2023-10-16-18_44_17.jpg?updatedAt=1697474700747",
+        ], // TODO: fix the desktop photo
     },
 ];

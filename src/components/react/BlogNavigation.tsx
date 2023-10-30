@@ -1,44 +1,12 @@
 import layout, { style } from "../../constants/style";
 import { useState } from "react";
 import ThemeSwitchButton from "./ThemeSwitchButton";
-import LanguageOptions from "./LanguageOptions";
 import { useEffect } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
 import { useTranslations } from "../../i18n/utils";
 import LinkWithIcon from "./LinkWithIcon";
 
 const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
     const t = useTranslations(lang);
-    const { scrollYProgress } = useScroll();
-    const scaleX = useSpring(scrollYProgress, { stiffness: 400, damping: 90 });
-
-    const [theme, setTheme] = useState("");
-
-    useEffect(() => {
-        const localTheme = localStorage.getItem("theme");
-        if (localTheme) {
-            return setTheme(localTheme);
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            setTheme("dark");
-        } else {
-            setTheme("light");
-        }
-    }, []);
-
-    useEffect(() => {
-        if (theme === "light") {
-            document.documentElement.classList.remove("dark");
-        } else {
-            document.documentElement.classList.add("dark");
-        }
-        localStorage.setItem("theme", theme);
-    }, [theme]);
-
-    const switchTheme = () => {
-        const newTheme = theme === "light" ? "dark" : "light";
-        setTheme(newTheme);
-    };
 
     return (
         <div
@@ -59,11 +27,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
                 {/* Desktop devices */}
                 <div className="hidden items-center gap-8 lg:flex">
                     <div className="flex items-center gap-2">
-                        <ThemeSwitchButton
-                            theme={theme}
-                            switchTheme={switchTheme}
-                            text={theme === "dark" ? t("nav.theme.dark") : t("nav.theme.light")}
-                        />
+                        <ThemeSwitchButton />
                     </div>
                     {/* <LanguageOptions borderless={true} lang={lang} endpoint="/blog" /> */}
                 </div>
@@ -76,10 +40,7 @@ const Navigation = ({ lang }: { lang: "en" | "es" | "bg" }) => {
                     />
                 </ul>
             </nav>
-            <motion.div
-                className="h-1 bg-cyan-600 rounded"
-                style={{ scaleX, transformOrigin: "left" }}
-            />
+            <div className="h-1 bg-cyan-600 rounded" />
         </div>
     );
 };

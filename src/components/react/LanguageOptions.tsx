@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { style } from "../../constants/style";
-import { motion } from "framer-motion";
 
 type Props = {
     borderless?: boolean;
@@ -34,11 +33,7 @@ const LanguageOptions = ({ borderless, lang, endpoint = "/" }: Props) => {
                 <span className="inline-block w-18 text-start">{languages[`/${lang}`]}</span>
             </button>
             {showLanguageOptions && (
-                <motion.ul
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                <ul
                     className={`${style.textPrimary} absolute flex flex-col top-full p-2 border-2 border-gray-600 rounded-lg`}
                 >
                     {Object.keys(languages).map((lang) => {
@@ -53,7 +48,7 @@ const LanguageOptions = ({ borderless, lang, endpoint = "/" }: Props) => {
                             </a>
                         );
                     })}
-                </motion.ul>
+                </ul>
             )}
         </div>
     );

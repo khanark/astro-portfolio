@@ -36,7 +36,9 @@ const { title, date, category, author, image } = frontmatter;
             </header>
             <div class="post-content">
                 <div class="content p-4">
-                    <slot />
+                    <div class="dark:text-gray-200 text-gray-700">
+                        <slot />
+                    </div>
                 </div>
                 <div class="side-bar"></div>
             </div>
