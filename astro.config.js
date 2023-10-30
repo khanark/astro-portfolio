@@ -5,6 +5,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind()],
-  experimental: { assets: true, viewTransitions: true },
+    integrations: [react(), tailwind()],
+    experimental: { assets: true },
 });
